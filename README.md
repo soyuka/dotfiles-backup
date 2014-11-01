@@ -1,4 +1,6 @@
-dotfiles
+My dotfiles
 ========
 
-My dot files
+Zsh/vim
+
+Launch `vimSetup.sh` and `zshSetup.sh`
