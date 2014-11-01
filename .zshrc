@@ -20,9 +20,6 @@ plugins=(osx git last-working-dir npm sublime web-search)
 
 source $ZSH/oh-my-zsh.sh
 
-# Loads nvm
-[ -s "/Users/soyuka/.nvm/nvm.sh" ] && . "/Users/soyuka/.nvm/nvm.sh" # This loads nvm
-
 # User configuration
 
 export PATH="/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"
