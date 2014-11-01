@@ -1,0 +1,134 @@
+set nocp
+filetype plugin indent on
+
+let g:OS = 'linux'
+
+let os = substitute(system('uname'), '\n', '', '')
+if os == 'Darwin' || os == 'Mac'
+  let g:OS = 'osx'
+endif
+
+set t_Co=256
+
+" Color scheme
+if OS == 'linux'
+  set background=dark
+endif
+
+colorscheme Tomorrow-Night
+syn on
+
+set syntax=on
+set nocompatible
+set number 
+set showcmd
+set scrolloff=5               " keep at least 5 lines above/below
+set sidescrolloff=5           " keep at least 5 lines left/right
+set showmatch
+
+set hidden " allow the use of unsaved buffer
+set prompt " prompt on saving
+set backspace=indent,eol,start " Better handling of backspace key
+set nostartofline              " Emulate typical editor navigation behaviour
+
+if OS == 'osx'
+  set dir=/private/tmp
+else
+  set dir=/tmp
+endif
+
+set nobackup
+
+" Who doesn't like autoindent?
+set autoindent
+
+" Spaces are better than a tab character
+set expandtab
+set smarttab
+
+" 2 space tabs
+
+set shiftwidth=2
+set softtabstop=2
+
+set incsearch
+" that feature is awesome (http://ask.fclose.com/150/how-to-make-case-insensitive-search-in-vim-vi)
+set ignorecase
+set smartcase
+set spelllang=en
+set nospell
+set spellsuggest=5
+set showmode
+
+set laststatus=2
+
+" split more naturally
+set splitright
+set splitbelow
+
+set cul " highlight current line
+"
+" Configure invisible characters
+set list
+set listchars=trail:·,eol:¬,tab:┊\ 
+hi NonText term=bold ctermfg=0 guifg=#ffffff gui=bold
+
+set autochdir "cd to file cwd
+
+" wrap to previous line when cursor reach eol/beginning
+set whichwrap+=<,>,h,l,[,]
+
+" Key mapping
+
+" Replacing : by ; cmd
+nore ; :
+" Replacing ; by , to match next f,t,F,T
+nore , ;
+
+" Mapping space to leader key
+map <Space> <Leader>
+
+"semicolons helper
+nnoremap <Leader>; A;<esc>
+
+"paste helper
+nnoremap <Leader>p :set paste!<CR>
+
+" Replaces tabs with spaces
+nnoremap <Leader>t :0,$s/\t/  /g<CR>
+
+vnoremap <Leader>y "+y
+vnoremap <Leader>Y "+Y
+nnoremap <Leader>y "+y
+nnoremap <Leader>Y "+Y
+
+
+" map CTRL-E to end of line (insert mode)
+imap <C-e> <esc>$i<right>
+
+" map CTRL-A to begining of line (insert mode)
+imap <C-a> <esc>0i<right>
+
+" map ctrl-E, ctrl-A normal mode
+nmap <C-e> $
+nmap <C-a> 0
+
+" Navigate between splits more naturally
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" map Shift-move to move 10to10
+nnoremap <S-J> }
+nnoremap <S-K> {
+"shift left-right word by word
+nnoremap <S-L> w 
+nnoremap <S-H> 10<Left> 
+
+vnoremap <S-J> }
+vnoremap <S-K> {
+vnoremap <S-L> w
+vnoremap <S-H> 10<Left>
+
+au BufRead,BufNewFile *.md set filetype=markdown
