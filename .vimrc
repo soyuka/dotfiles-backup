@@ -133,7 +133,7 @@ set splitbelow
 
 " Configure invisible characters
 set list
-set listchars=trail:·,eol:¬,tab:┊\ 
+" set listchars=trail:·,eol:¬,tab:┊\ 
 hi NonText term=bold ctermfg=0 guifg=#ffffff gui=bold
 
 set autochdir "cd to file cwd
