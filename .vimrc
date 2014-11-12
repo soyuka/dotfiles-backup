@@ -4,29 +4,26 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'The-NERD-Tree'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlp.vim'
+" buffer manager <3
+Plugin 'fholgado/minibufexpl.vim'
 " Syntax checker
 Plugin 'Syntastic'
-" Plugin 'PIV'
-Plugin 'vim-scripts/HTML-AutoCloseTag'
 " auto close pairs
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'ervandew/supertab'
-Plugin 'ctrlp.vim'
+Plugin 'Townk/vim-autoclose'
+" crap it is
+" Plugin 'jiangmiao/auto-pairs'
 " git wrapper
 Plugin 'fugitive.vim'
 " gcc comment
 Plugin 'tComment'
+" nicer 'f
 Plugin 'rhysd/clever-f.vim'
 " lightline
 Plugin 'itchyny/lightline.vim'
-" Plugin 'chriskempson/base16-vim'
 " multiple cursor editing 
 Plugin 'terryma/vim-multiple-cursors'
-" shows buffer list in my status line
-Plugin 'bling/vim-bufferline'
-" deletes buffer
-Plugin 'moll/vim-bbye'
 Plugin 'nathanaelkane/vim-indent-guides'
 " auto doc php
 Plugin 'tobyS/pdv'
@@ -36,10 +33,18 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-haml'
-" Track the engine.
-" Plugin 'SirVer/ultisnips'
+" tab autocomplete/snips
+Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+" go
+Plugin 'fatih/vim-go'
 " Snippets are separated from the engine. Add this if you want them:
-" Plugin 'honza/vim-snippets'
+Plugin 'honza/vim-snippets'
+" scss syntax
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'majutsushi/tagbar'
+
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -85,7 +90,7 @@ set nostartofline              " Emulate typical editor navigation behaviour
 if OS == 'osx'
   set dir=/private/tmp
 else
-  set dir=/tmp
+  set dir=~/tmp
 endif
 
 set nobackup
@@ -155,11 +160,17 @@ nnoremap <Leader>p :set paste!<CR>
 " Replaces tabs with spaces
 nnoremap <Leader>t :0,$s/\t/  /g<CR>
 
+" Delete buffer but leave window open
+nnoremap <Leader>q :MBEbd<CR>
+
 vnoremap <Leader>y "+y
 vnoremap <Leader>Y "+Y
 nnoremap <Leader>y "+y
 nnoremap <Leader>Y "+Y
 
+nnoremap <Leader>f :MBEFocus<CR>
+nnoremap <S-L> :MBEbf<CR>
+nnoremap <S-H> :MBEbb<CR>
 
 " map CTRL-E to end of line (insert mode)
 imap <C-e> <esc>$i<right>
@@ -190,9 +201,6 @@ nnoremap <C-H> <C-W><C-H>
 " map Shift-move to move 10to10
 nnoremap <S-J> }
 nnoremap <S-K> {
-"shift left-right word by word
-nnoremap <S-L> w 
-nnoremap <S-H> 10<Left> 
 
 vnoremap <S-J> }
 vnoremap <S-K> {
@@ -200,6 +208,8 @@ vnoremap <S-L> w
 vnoremap <S-H> 10<Left>
 
 au BufRead,BufNewFile *.md set filetype=markdown
+autocmd filetype crontab setlocal nobackup nowritebackup
+au BufRead,BufNewFile *.scss set filetype=scss.css " ultisnips css for scss
 
 " Plugins configuration
 
@@ -210,31 +220,25 @@ autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 let g:clever_f_smart_case = 1
 
 " Chdir to current file
-let NERDTreeChDirMode=2
+let g:NERDTreeChDirMode=2
+let g:NERDTreeShowBookmarks=1
 " NERDTree window size
 let g:NERDTreeWinSize=35
+let g:NERDTreeBookmarksFile = $HOME ."/.vim/bundle/NERDTree/bookmarks"
+let g:NERDTreeShowHidden=1
+let g:NERDTreeAutoDeleteBuffer=1
+let g:NERDTreeMinimalUI=1
 
-nnoremap <Leader>n :NERDTreeToggle<CR>
+let g:miniBufExplBRSplit = 0
 
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-
-" Close all open buffers on entering a window if the only
-" buffer that's left is the NERDTree buffer
-function! s:CloseIfOnlyNerdTreeLeft()
-  if exists("t:NERDTreeBufName")
-    if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr("$") == 1
-        q
-      endif
-    endif
-  endif
-endfunction
-
-" Buffer quit settings
-nnoremap <Leader>q :Bdelete<CR>
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" map NERDTree to ' n'
+map <Leader>n :NERDTreeToggle<CR>
 
 " Comment block
-map <Leader>gb :TCommentBlock<CR>
+map <Leader>g :TCommentBlock<CR>
+vmap gv :TCommentBlock<CR>
 
 " Set syntastic config
 let g:syntastic_check_on_open=1
@@ -261,20 +265,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  'node_modules\|bower_components\|tmp$'
   \ }
 
-" if OS == 'osx'
-"   let g:bufferline_echo = 1
-" else
-  let g:bufferline_echo = 1
-" endif
-" function! MyBufferLine() 
-  " if g:OS != 'osx'
-  "   let st=g:bufferline#refresh_status()
-  " endif
-  " return g:bufferline_status_info.before . g:bufferline_status_info.current . g:bufferline_status_info.after
-" endfunction
-
-" StatusLine configuration
-
 if OS == 'linux'
   let g:lock = "✎"
 else
@@ -285,7 +275,7 @@ let g:lightline = {
       \ 'colorscheme': 'Tomorrow_Night',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ], ['bufferline'] ]
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component': {
       \   'readonly': '%{&filetype=="help"?"":&readonly?"'.g:lock.'":""}',
@@ -298,3 +288,13 @@ let g:lightline = {
       \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
       \ },
 \ }
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
