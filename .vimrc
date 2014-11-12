@@ -11,7 +11,8 @@ Plugin 'fholgado/minibufexpl.vim'
 " Syntax checker
 Plugin 'Syntastic'
 " auto close pairs
-Plugin 'Townk/vim-autoclose'
+" Plugin 'Townk/vim-autoclose'
+Plugin 'Raimondi/delimitMate'
 " crap it is
 " Plugin 'jiangmiao/auto-pairs'
 " git wrapper
@@ -43,7 +44,7 @@ Plugin 'fatih/vim-go'
 Plugin 'honza/vim-snippets'
 " scss syntax
 Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'majutsushi/tagbar'
+" Plugin 'majutsushi/tagbar'
 
 
 call vundle#end()            " required
@@ -132,7 +133,7 @@ set splitbelow
 " endif
 
 " Configure invisible characters
-set list
+set nolist
 " set listchars=trail:·,eol:¬,tab:┊\ 
 hi NonText term=bold ctermfg=0 guifg=#ffffff gui=bold
 
