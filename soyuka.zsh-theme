@@ -80,11 +80,12 @@ fi
 _USERNAME="$_USERNAME%{$reset_color%}"
 
 local _current_dir="%{$fg[blue]%}%~%{$reset_color%} "
+local user_host="%{$terminfo[bold]$fg[cyan]%}@%m%{$reset_color%}"
 local _return_status="%{$fg[red]%}%(?.. ⍉)%{$reset_color%} "
 local _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
 # local _git_prompt_info="$(git_prompt_info) |"
 #Prompt status bar
-PROMPT='${_USERNAME} ${_current_dir}$(git_prompt_info)${_return_status}$(git_prompt_status) $(_git_time_since_commit)%{$reset_color%}
+PROMPT='${_USERNAME}${user_host} ${_current_dir}$(git_prompt_info)${_return_status}$(git_prompt_status) $(_git_time_since_commit)%{$reset_color%}
 ❯ '
 
 PROMPT2='%{$fg[grey]%}❮%{$reset_color%} %3~%'
