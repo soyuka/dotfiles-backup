@@ -45,8 +45,8 @@ Plugin 'fatih/vim-go'
 Plugin 'honza/vim-snippets'
 " scss syntax
 Plugin 'cakebaker/scss-syntax.vim'
-" Plugin 'majutsushi/tagbar'
-
+" angular snippets
+Plugin 'matthewsimo/angular-vim-snippets'
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -245,6 +245,14 @@ vmap gv :TCommentBlock<CR>
 " Set syntastic config
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
+" Ignore html errors angular
+let g:syntastic_html_tidy_ignore_errors = [
+    \"trimming empty <i>",
+    \"trimming empty <span>",
+    \"<input> proprietary attribute \"autocomplete\"",
+    \"proprietary attribute \"role\"",
+    \"proprietary attribute \"hidden\"",
+\]
 
 " Indent guides
 let g:indent_guides_start_level=2
