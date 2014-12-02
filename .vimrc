@@ -92,7 +92,7 @@ set nostartofline              " Emulate typical editor navigation behaviour
 if OS == 'osx'
   set dir=/private/tmp
 else
-  set dir=~/tmp
+  set dir=/tmp
 endif
 
 set nobackup
