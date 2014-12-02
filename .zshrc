@@ -1,6 +1,6 @@
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="soyuka"
+ZSH_THEME="simple2"
 # norm avit af-magic ys
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -70,3 +70,4 @@ extract() {
 
 alias movies='cd /Volumes/HDD\ Soyu2/Movies/'
 export ES_HOME=/usr/local/opt/elasticsearch
+unset GREP_OPTIONS #grep options are deprecated

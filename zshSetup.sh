@@ -1,3 +1,3 @@
 cp .zshrc ~/.zshrc
-cp ./soyuka.zsh-theme ~/.oh-my-zsh/themes/
+cp ./simple2.zsh-theme ~/.oh-my-zsh/themes/
 source ~/.zshrc
