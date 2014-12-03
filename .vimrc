@@ -171,8 +171,8 @@ nnoremap <Leader>y "+y
 nnoremap <Leader>Y "+Y
 
 nnoremap <Leader>f :MBEFocus<CR>
-nnoremap <S-L> :MBEbf<CR>
-nnoremap <S-H> :MBEbb<CR>
+nnoremap <S-L> :MBEbn<CR>
+nnoremap <S-H> :MBEbp<CR>
 
 " map CTRL-E to end of line (insert mode)
 imap <C-e> <esc>$i<right>
@@ -213,6 +213,9 @@ au BufRead,BufNewFile *.md set filetype=markdown
 autocmd filetype crontab setlocal nobackup nowritebackup
 au BufRead,BufNewFile *.scss set filetype=scss.css " ultisnips css for scss
 
+autocmd Filetype php setlocal ts=4 st=4 sw=4
+autocmd Filetype css setlocal ts=4 st=4 sw=4
+
 " Plugins configuration
 
 "Set syntax angularjs
@@ -240,7 +243,7 @@ map <Leader>n :NERDTreeToggle<CR>
 
 " Comment block
 map <Leader>g :TCommentBlock<CR>
-vmap gv :TCommentBlock<CR>
+vmap gb :TCommentBlock<CR>
 
 " Set syntastic config
 let g:syntastic_check_on_open=1
