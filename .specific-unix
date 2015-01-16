@@ -1,0 +1,30 @@
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+  alias tmux='tmux -2'
+
+  export OCI_HOME=$ORACLE_HOME
+  export OCI_INCLUDE_DIR=/usr/include/oracle/11.2/client64
+  export OCI_LIB_DIR=$ORACLE_HOME/lib
+  # export ORACLE_HOME=/usr/lib/oracle/11.2/client64
+  # export C_INCLUDE_PATH=/usr/include/oracle/11.2/client64
+  # export LD_LIBRARY_PATH=$ORACLE_HOME/lib
+  # export TERM="xterm-256color"
+  # export NLS_LANG=AMERICAN_AMERICA.WE8ISO8859P1 
+  # export NLS_LANG=FRENCH_FRANCE.UTF8
+  . /etc/profile.d/oracle.sh
+
+  sites() {
+          cd "/var/www/$1"
+  }
+
+
+export NVM_DIR="/home/abluchet/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export ES_HOME=/usr/share/elasticsearch
+
+#142sk3
+kimsufi() {
+http -u -b GET https://ws.ovh.com/dedicated/r2/ws.dispatcher/getAvailability2\?callback\= | jq --arg ks $1 '.answer.availability[] | select(. | contains({reference: $ks})) | .zones[] | select(.availability != "unavailable")'
+
+}
+
