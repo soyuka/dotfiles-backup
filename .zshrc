@@ -25,3 +25,7 @@ else
 fi
 
 unset GREP_OPTIONS #grep options are deprecated
+
+calc() {
+  echo "$(($@))"
+}
