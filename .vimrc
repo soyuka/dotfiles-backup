@@ -171,8 +171,8 @@ nnoremap <Leader>y "+y
 nnoremap <Leader>Y "+Y
 
 nnoremap <Leader>f :MBEFocus<CR>
-nnoremap <S-L> :MBEbf<CR>
-nnoremap <S-H> :MBEbb<CR>
+nnoremap <S-L> :MBEbn<CR>
+nnoremap <S-H> :MBEbp<CR>
 
 " map CTRL-E to end of line (insert mode)
 imap <C-e> <esc>$i<right>
