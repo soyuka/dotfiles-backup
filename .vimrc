@@ -73,6 +73,8 @@ if OS == 'linux'
   set background=dark
 endif
 
+" let g:base16colorspace=256
+
 colorscheme Tomorrow-Night
 syn on
 
@@ -229,12 +231,13 @@ let g:NERDTreeChDirMode=2
 let g:NERDTreeShowBookmarks=1
 " NERDTree window size
 let g:NERDTreeWinSize=35
-let g:NERDTreeBookmarksFile = $HOME ."/.vim/bundle/NERDTree/bookmarks"
+let g:NERDTreeBookmarksFile = $HOME ."/.vim/bundle/nerdtree/bookmarks"
 let g:NERDTreeShowHidden=1
 let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeMinimalUI=1
 
-let g:miniBufExplBRSplit = 0
+let g:miniBufExplBRSplit=0
+let g:miniBufExplCycleArround=1
 
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif

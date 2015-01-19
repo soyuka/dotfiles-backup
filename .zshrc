@@ -22,12 +22,13 @@ else
   export EDITOR='vim'
 fi
 
-if [ -e /usr/share/terminfo/x/xterm-256color ]; then  
- export TERM='xterm-256color'
-else  
-  export TERM='xterm-color'
-fi
+# if [ -e /usr/share/terminfo/x/xterm-256color ]; then  
+#  export TERM='xterm-256color'
+# else  
+  # export TERM='xterm'
+# fi
 
+alias tmux="TERM=screen-256color-bxe tmux"
 
 unset GREP_OPTIONS #grep options are deprecated
 
