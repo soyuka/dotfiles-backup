@@ -1,31 +1,54 @@
-export ZSH=$HOME/.oh-my-zsh
-
-ZSH_THEME="simple2"
-
-plugins=(osx git last-working-dir npm sublime web-search git-extras z)
-
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
-
 export PATH="/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"
 export MANPATH="/usr/local/man:$MANPATH"
 
-if [[ -f $HOME/specific.sh ]]; then
-  source $HOME/specific.sh
-fi
+# Zsh config directory
+export ZSH_CONFIG="${HOME}/.config/zsh"
+# Change antigen directory
+export ADOTDIR="$ZSH_CONFIG/antigen"
 
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
   export EDITOR='vim'
 fi
 
-unset GREP_OPTIONS #grep options are deprecated
+export DEBUG="*"
+
+# Loads nvm
+[ -s "${HOME}/.nvm/nvm.sh" ] && . "${HOME}/.nvm/nvm.sh"
+
+# Todo - crap
+composer() {
+  /usr/bin/composer.phar $@
+}
 
 calc() {
   echo "$(($@))"
 }
+
+# Just 4 fun, availability of a kimsufi 
+#eg: kimsufi 142sk3
+kimsufi() {
+  http GET https://ws.ovh.com/dedicated/r2/ws.dispatcher/getAvailability2\?callback\= | jq --arg ks $1 '.answer.availability[] | select(. | contains({reference: $ks})) | .zones[] | select(.availability != "unavailable")'
+}
+
+# Load specs by system
+[ -f "$ZSH_CONFIG/specific.sh" ] && source "$ZSH_CONFIG/specific.sh"
+
+source "$ZSH_CONFIG/antigen.zsh"
+
+antigen bundle git
+antigen bundle npm
+antigen bundle command-not-found
+
+# Syntax
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# z <3
+antigen bundle rupa/z
+# git extras
+antigen bundle tj/git-extras
+antigen theme soyuka/dotfiles soyuka
+
+antigen apply

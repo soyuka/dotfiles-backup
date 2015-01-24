@@ -1,3 +1,5 @@
 cp .zshrc ~/.zshrc
-cp ./simple2.zsh-theme ~/.oh-my-zsh/themes/
+mkdir -p ~/.config/zsh/ 
+curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > antigen.zsh
+cp ./zsh/* ~/.config/zsh/
 source ~/.zshrc
