@@ -38,17 +38,21 @@ kimsufi() {
 
 source "$ZSH_CONFIG/antigen.zsh"
 
+antigen use oh-my-zsh
 antigen bundle git
+antigen bundle git-extras
+antigen bundle gitfast
+
 antigen bundle npm
 antigen bundle command-not-found
 
 # Syntax
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions src
 
 # z <3
 antigen bundle rupa/z
 # git extras
-antigen bundle tj/git-extras
-antigen theme soyuka/dotfiles soyuka
+antigen theme $ZSH_CONFIG soyuka
 
 antigen apply
