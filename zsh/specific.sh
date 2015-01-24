@@ -26,9 +26,6 @@ if [[ $OS == 'OS X' ]]; then
 
 else
 
-  if [ !$(exists "git-ignore") ]; then
-    echo "git-extras not installed"
-  fi
 
 # TODO
 fi
