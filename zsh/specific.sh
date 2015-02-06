@@ -25,7 +25,5 @@ if [[ $OS == 'OS X' ]]; then
   export GOPATH=/usr/local/Cellar/go/1.3.3/
 
 else
-
-
-# TODO
+	echo "unix" 
 fi

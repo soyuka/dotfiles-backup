@@ -1,7 +1,11 @@
 ZSH_THEME_GIT_PROMPT_PREFIX="("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")"
 
-
+is_super_user() {
+  if [ $(whoami) == "root" ]; then
+    echo "⚡  "
+  fi
+}
 
 # ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 # ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
@@ -20,12 +24,6 @@ ZSH_THEME_GIT_TIME_SINCE_COMMIT_SHORT="%{$fg[green]%}"
 ZSH_THEME_GIT_TIME_SHORT_COMMIT_MEDIUM="%{$fg[yellow]%}"
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_LONG="%{$fg[red]%}"
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL="%{$fg[grey]%}"
-
-is_super_user() {
-  if [ $(whoami) == "root" ]; then
-    echo "⚡  "
-  fi
-}
 
 PROMPT='$(is_super_user)$(git_prompt_info)❯ '
 
