@@ -2,8 +2,8 @@ ZSH_THEME_GIT_PROMPT_PREFIX="("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")"
 
 is_super_user() {
-  if [ $(whoami) == "root" ]; then
-    echo "⚡  "
+  if [[ $(whoami) == "root" ]]; then
+    echo "⚡ "
   fi
 }
 
