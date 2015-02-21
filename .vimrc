@@ -30,11 +30,16 @@ Plugin 'nathanaelkane/vim-indent-guides'
 " auto doc php
 Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache'
+" phpfolding
+Plugin 'rayburgemeestre/phpfolding.vim'
+" php complete
+Plugin 'shawncplus/phpcomplete.vim'
 " Nice js plugins
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-obsession'
 " tab autocomplete/snips
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
@@ -175,14 +180,14 @@ nnoremap <S-L> :MBEbn<CR>
 nnoremap <S-H> :MBEbp<CR>
 
 " map CTRL-E to end of line (insert mode)
-imap <C-e> <esc>$i<right>
+" imap <C-e> <esc>$i<right>
 
 " map CTRL-A to begining of line (insert mode)
-imap <C-a> <esc>0i<right>
+" imap <C-a> <esc>0i<right>
 
 " map ctrl-E, ctrl-A normal mode
-nmap <C-e> $
-nmap <C-a> 0
+" nmap <C-e> $
+" nmap <C-a> 0
 
 " Navigate between splits more naturally
 nnoremap <C-J> <C-W><C-J>
@@ -213,6 +218,8 @@ au BufRead,BufNewFile *.md set filetype=markdown
 autocmd filetype crontab setlocal nobackup nowritebackup
 au BufRead,BufNewFile *.scss set filetype=scss.css " ultisnips css for scss
 
+autocmd Filetype php setlocal ts=4 st=4 sw=4
+autocmd Filetype css setlocal ts=4 st=4 sw=4
 " Plugins configuration
 
 "Set syntax angularjs
@@ -231,7 +238,8 @@ let g:NERDTreeShowHidden=1
 let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeMinimalUI=1
 
-let g:miniBufExplBRSplit = 0
+let g:miniBufExplBRSplit=0
+let g:miniBufExplCycleArround=1
 
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -240,7 +248,7 @@ map <Leader>n :NERDTreeToggle<CR>
 
 " Comment block
 map <Leader>g :TCommentBlock<CR>
-vmap gv :TCommentBlock<CR>
+vmap gb :TCommentBlock<CR>
 
 " Set syntastic config
 let g:syntastic_check_on_open=1
@@ -259,11 +267,15 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
 " Disable PIV folding
-set nofoldenable
-let g:DisableAutoPHPFolding = 1 " disable PIV's folding
+" set nofoldenable
+" let g:DisableAutoPHPFolding = 1 " disable PIV's folding
 
 " pdv template dir
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
+nnoremap <C-o> za
+nnoremap <C-S-O> zR
+nnoremap <C-c> zM
 
 "Map ctrl+p
 let g:ctrlp_map = '<c-p>'

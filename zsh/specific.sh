@@ -25,10 +25,5 @@ if [[ $OS == 'OS X' ]]; then
   export GOPATH=/usr/local/Cellar/go/1.3.3/
 
 else
-
-  if [ !$(exists "git-ignore") ]; then
-    echo "git-extras not installed"
-  fi
-
-# TODO
+	echo "unix" 
 fi
