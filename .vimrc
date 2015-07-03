@@ -5,8 +5,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimproc.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlp.vim'
+" Plugin 'ctrlp.vim'
 " buffer manager <3
 Plugin 'fholgado/minibufexpl.vim'
 " Syntax checker
@@ -27,13 +29,6 @@ Plugin 'itchyny/lightline.vim'
 " multiple cursor editing 
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'nathanaelkane/vim-indent-guides'
-" auto doc php
-Plugin 'tobyS/pdv'
-Plugin 'tobyS/vmustache'
-" phpfolding
-Plugin 'rayburgemeestre/phpfolding.vim'
-" php complete
-Plugin 'shawncplus/phpcomplete.vim'
 " Nice js plugins
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -52,6 +47,20 @@ Plugin 'honza/vim-snippets'
 Plugin 'cakebaker/scss-syntax.vim'
 " angular snippets
 Plugin 'matthewsimo/angular-vim-snippets'
+"PHP Plugins
+" auto doc php
+Plugin 'tobyS/pdv'
+Plugin 'tobyS/vmustache'
+" phpfolding
+Plugin 'rayburgemeestre/phpfolding.vim'
+" php complete
+Plugin 'shawncplus/phpcomplete.vim'
+" Plugin 'arnaud-lb/vim-php-namespace'
+" Plugin 'm2mdas/phpcomplete-extended'
+" Plugin 'm2mdas/phpcomplete-extended-symfony'
+Plugin 'docteurklein/php-getter-setter.vim'
+" Plugin '2072/PHP-Indenting-for-VIm'
+" Bundle 'Shougo/vimproc'
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -83,11 +92,12 @@ syn on
 
 set syntax=on
 set nocompatible
-set number " disable line numbers
+set number " enable line numbers
 set showcmd
 set scrolloff=5               " keep at least 5 lines above/below
 set sidescrolloff=5           " keep at least 5 lines left/right
 set showmatch
+set colorcolumn=81
 
 set hidden " allow the use of unsaved buffer
 set prompt " prompt on saving
@@ -97,7 +107,7 @@ set nostartofline              " Emulate typical editor navigation behaviour
 if OS == 'osx'
   set dir=/private/tmp
 else
-  set dir=/tmp
+  set dir=~/.tmp
 endif
 
 set nobackup
@@ -108,11 +118,7 @@ set autoindent
 " Spaces are better than a tab character
 set expandtab
 set smarttab
-
-" 2 space tabs
-
-set shiftwidth=2
-set softtabstop=2
+set shiftround
 
 set incsearch
 " that feature is awesome (http://ask.fclose.com/150/how-to-make-case-insensitive-search-in-vim-vi)
@@ -143,7 +149,7 @@ set nolist
 " set listchars=trail:·,eol:¬,tab:┊\ 
 hi NonText term=bold ctermfg=0 guifg=#ffffff gui=bold
 
-set autochdir "cd to file cwd
+set noautochdir "cd to file cwd
 
 " wrap to previous line when cursor reach eol/beginning
 set whichwrap+=<,>,h,l,[,]
@@ -214,12 +220,15 @@ vnoremap <S-K> {
 vnoremap <S-L> w
 vnoremap <S-H> 10<Left>
 
-au BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd filetype crontab setlocal nobackup nowritebackup
-au BufRead,BufNewFile *.scss set filetype=scss.css " ultisnips css for scss
+autocmd BufRead,BufNewFile *.scss set filetype=scss.css " ultisnips css for scss
 
-autocmd Filetype php setlocal ts=4 st=4 sw=4
 autocmd Filetype css setlocal ts=4 st=4 sw=4
+autocmd BufRead,BufNewFile *.php  source ~/.vim/ftplugin/php.vim
+autocmd BufRead,BufNewFile *.yml  source ~/.vim/ftplugin/php.vim
+autocmd BufRead,BufNewFile *.js source ~/.vim/ftplugin/js.vim
+autocmd BufRead,BufNewFile *.json source ~/.vim/ftplugin/js.vim
 " Plugins configuration
 
 "Set syntax angularjs
@@ -229,17 +238,18 @@ autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 let g:clever_f_smart_case = 1
 
 " Chdir to current file
-let g:NERDTreeChDirMode=2
+let g:NERDTreeChDirMode=1
 let g:NERDTreeShowBookmarks=1
 " NERDTree window size
 let g:NERDTreeWinSize=35
-let g:NERDTreeBookmarksFile = $HOME ."/.vim/bundle/NERDTree/bookmarks"
+let g:NERDTreeBookmarksFile = $HOME ."/.vim/bundle/nerdtree/bookmarks"
 let g:NERDTreeShowHidden=1
 let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeMinimalUI=1
 
 let g:miniBufExplBRSplit=0
 let g:miniBufExplCycleArround=1
+" let g:miniBufExplSortBy="mru"
 
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -278,14 +288,20 @@ nnoremap <C-S-O> zR
 nnoremap <C-c> zM
 
 "Map ctrl+p
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
-" Sane Ignore For ctrlp
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  'node_modules\|bower_components\|tmp$'
-  \ }
+if executable('pt')
+  let g:unite_source_rec_async_command = 'pt --nogroup --nocolor -S -g .'
+endif
+
+nnoremap <C-p> :Unite -start-insert file_rec/async<CR>
+nnoremap <Leader>/ :Unite grep:.<CR>
+let g:unite_source_history_yank_enable = 1
+nnoremap <Leader>h :Unite history/yank<CR>
+nnoremap <Leader>e :Unite -start-insert symfony/entities<CR>
+nnoremap <Leader>b :Unite -start-insert symfony/bundles<CR>
+vmap <Leader>s :InsertBothGetterSetter<CR>
+
 
 if OS == 'linux'
   let g:lock = "✎"
@@ -320,3 +336,6 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" php complete
+let g:phpcomplete_index_composer_command = "composer"
