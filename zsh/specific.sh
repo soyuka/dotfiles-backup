@@ -25,5 +25,7 @@ if [[ $OS == 'OS X' ]]; then
   export GOPATH=/usr/local/Cellar/go/1.3.3/
 
 else
-	echo "unix" 
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+  alias tmux='tmux -2 -u'
 fi
