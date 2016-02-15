@@ -7,7 +7,6 @@ Xft.hintstyle: hintfull
 
 URxvt*termName: xterm-256color
 
-
 URxvt*saveLines: 4096
 URxvt*fastScroll: true
 URxvt.scrollBar: false
@@ -22,14 +21,6 @@ URxvt.font: xft:SourceCodePro:size=12:antialias=true:autohint=true
 ! URxvt.boldFont: xft:SourceCodeProBold:size=10
 URxvt.letterSpace: 0
 URxvt.cursorBlink: true
-
-! disable perl extensions
-URxvt.perl-ext-common:default,clipboard,url-select
-URxvt.urlLauncher: xdg-open
-URxvt.urlButton: 1
-URxvt.underlineURLs: True
-
-URxvt.keysym.C-S-v: perl:clipboard:paste_escaped
 
 ! mouse selection
 URxvt*charClass: 33:48,35:48,37:48,43:48,45-57:48,64:48,95:48,126:48
