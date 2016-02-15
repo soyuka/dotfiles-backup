@@ -1,1 +1,1 @@
-apt-get install xsel
+apt-get install xsel xclip

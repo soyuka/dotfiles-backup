@@ -13,8 +13,6 @@ else
   export EDITOR='vim'
 fi
 
-export DEBUG="*"
-
 fpath=($ZSH_CONFIG/completion $fpath)
 autoload -Uz compinit && compinit -i
 
