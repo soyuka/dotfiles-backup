@@ -15,6 +15,9 @@ fi
 
 export DEBUG="*"
 
+fpath=($ZSH_CONFIG/completion $fpath)
+autoload -Uz compinit && compinit -i
+
 # Loads nvm
 [ -s "${HOME}/.nvm/nvm.sh" ] && . "${HOME}/.nvm/nvm.sh"
 

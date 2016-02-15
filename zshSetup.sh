@@ -6,4 +6,5 @@ mkdir -p ~/.config/zsh/
 curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > antigen.zsh
 mv antigen.zsh ~/.config/zsh/antigen.zsh
 cp ./zsh/* ~/.config/zsh/
-source ~/.zshrc
+curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/zsh/_docker-compose > ~/.config/zsh/completion/_docker-compose
+exec $SHELL -l
