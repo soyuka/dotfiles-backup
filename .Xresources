@@ -18,18 +18,18 @@ URxvt*trimSelection: true
 URxvt.iso14755: False
 
 ! Locale
-! URxvt.font: xft:SourceCodePro:size=10:antialias=true:autohint=true
+URxvt.font: xft:SourceCodePro:size=12:antialias=true:autohint=true
 ! URxvt.boldFont: xft:SourceCodeProBold:size=10
 URxvt.letterSpace: 0
 URxvt.cursorBlink: true
 
 ! disable perl extensions
-URxvt.perl-ext-common:default,clipboard,keyboard-select,url-select
+URxvt.perl-ext-common:default,clipboard,url-select
 URxvt.urlLauncher: xdg-open
 URxvt.urlButton: 1
 URxvt.underlineURLs: True
 
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.C-S-v: perl:clipboard:paste_escaped
 
 ! mouse selection
 URxvt*charClass: 33:48,35:48,37:48,43:48,45-57:48,64:48,95:48,126:48
