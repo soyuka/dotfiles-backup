@@ -8,6 +8,9 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
 " Plugin 'ctrlp.vim'
 " buffer manager <3
 Plugin 'fholgado/minibufexpl.vim'
@@ -34,19 +37,16 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-obsession'
+" Plugin 'tpope/vim-obsession'
 " tab autocomplete/snips
-Plugin 'ervandew/supertab'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
+" Plugin 'ervandew/supertab'
+Plugin 'craigemery/vim-autotag'
 " go
 Plugin 'fatih/vim-go'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 " scss syntax
 Plugin 'cakebaker/scss-syntax.vim'
-" angular snippets
-Plugin 'matthewsimo/angular-vim-snippets'
 "PHP Plugins
 " auto doc php
 Plugin 'tobyS/pdv'
@@ -55,12 +55,9 @@ Plugin 'tobyS/vmustache'
 Plugin 'rayburgemeestre/phpfolding.vim'
 " php complete
 Plugin 'shawncplus/phpcomplete.vim'
-" Plugin 'arnaud-lb/vim-php-namespace'
-" Plugin 'm2mdas/phpcomplete-extended'
-" Plugin 'm2mdas/phpcomplete-extended-symfony'
+Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'docteurklein/php-getter-setter.vim'
-" Plugin '2072/PHP-Indenting-for-VIm'
-" Bundle 'Shougo/vimproc'
+Plugin 'Quramy/vison'
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -71,8 +68,9 @@ filetype plugin indent on
 " set [no]paste " to paste without indentation
 " % " to get to next matching parenthesis
 
-" OS determination
+set tags+=tags,tags.vendors
 
+" OS determination
 let g:OS = 'linux'
 
 let os = substitute(system('uname'), '\n', '', '')
@@ -135,14 +133,7 @@ set laststatus=2
 set splitright
 set splitbelow
 
-" if OS == 'osx'
-  set cul " highlight current line
-" else
-  " highlight CursorLine term=bold ctermfg=0 ctermbg=8 guifg=#cecece guibg=#282827
-  " highlight SpellBad ctermbg=0 guibg=#282827
-  " highlight SpellBad cterm=none ctermbg=none ctermfg=231
-  " set cul
-" endif
+set cul " highlight current line
 
 " Configure invisible characters
 set nolist
@@ -185,52 +176,31 @@ nnoremap <Leader>f :MBEFocus<CR>
 nnoremap <S-L> :MBEbn<CR>
 nnoremap <S-H> :MBEbp<CR>
 
-" map CTRL-E to end of line (insert mode)
-" imap <C-e> <esc>$i<right>
-
-" map CTRL-A to begining of line (insert mode)
-" imap <C-a> <esc>0i<right>
-
-" map ctrl-E, ctrl-A normal mode
-" nmap <C-e> $
-" nmap <C-a> 0
-
 " Navigate between splits more naturally
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" disable arrow keys
-" map <up> <nop>
-" map <down> <nop>
-" map <left> <nop>
-" map <right> <nop>
-" imap <up> <nop>
-" imap <down> <nop>
-" imap <left> <nop>
-" imap <right> <nop>
-      
 " map Shift-move to move 10to10
 nnoremap <S-J> }
 nnoremap <S-K> {
 
 vnoremap <S-J> }
 vnoremap <S-K> {
-vnoremap <S-L> w
-vnoremap <S-H> 10<Left>
 
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd filetype crontab setlocal nobackup nowritebackup
 autocmd BufRead,BufNewFile *.scss set filetype=scss.css " ultisnips css for scss
-
-autocmd Filetype css setlocal ts=4 st=4 sw=4
+autocmd BufRead,BufNewFile *.css  source ~/.vim/ftplugin/css.vim
 autocmd BufRead,BufNewFile *.php  source ~/.vim/ftplugin/php.vim
 autocmd BufRead,BufNewFile *.yml  source ~/.vim/ftplugin/php.vim
-autocmd BufRead,BufNewFile *.js source ~/.vim/ftplugin/js.vim
-autocmd BufRead,BufNewFile *.json source ~/.vim/ftplugin/js.vim
+autocmd BufRead,BufNewFile *.js source ~/.vim/ftplugin/javascript.vim
+autocmd BufRead,BufNewFile *.json source ~/.vim/ftplugin/javascript.vim
+autocmd BufRead,BufNewFile *.html source ~/.vim/ftplugin/html.vim
 " Plugins configuration
 
+let g:used_javascript_libs = 'angularjs,angularui,angularuirouter,chai'
 "Set syntax angularjs
 autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 
@@ -260,18 +230,6 @@ map <Leader>n :NERDTreeToggle<CR>
 map <Leader>g :TCommentBlock<CR>
 vmap gb :TCommentBlock<CR>
 
-" Set syntastic config
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_signs=1
-" Ignore html errors angular
-let g:syntastic_html_tidy_ignore_errors = [
-    \"trimming empty <i>",
-    \"trimming empty <span>",
-    \"<input> proprietary attribute \"autocomplete\"",
-    \"proprietary attribute \"role\"",
-    \"proprietary attribute \"hidden\"",
-\]
-
 " Indent guides
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
@@ -289,25 +247,26 @@ nnoremap <C-c> zM
 
 "Map ctrl+p
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-
-if executable('pt')
-  let g:unite_source_rec_async_command = 'pt --nogroup --nocolor -S -g .'
-endif
+call unite#custom#source('file_rec/async', 'ignore_pattern', 'vendor\|bower_components\|node_modules\|.git')
 
 nnoremap <C-p> :Unite -start-insert file_rec/async<CR>
-nnoremap <Leader>/ :Unite grep:.<CR>
-let g:unite_source_history_yank_enable = 1
-nnoremap <Leader>h :Unite history/yank<CR>
-nnoremap <Leader>e :Unite -start-insert symfony/entities<CR>
-nnoremap <Leader>b :Unite -start-insert symfony/bundles<CR>
+nnoremap <silent> <Leader>/ :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+
+
+if executable('pt')
+  let g:unite_source_grep_command = 'pt'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+  let g:unite_source_grep_recursive_opt = ''
+  let g:unite_source_grep_encoding = 'utf-8'
+  let g:unite_source_rec_async_command = 'pt --nogroup --nocolor -S -g .'
+endif
+" let g:unite_source_history_yank_enable = 1
+" nnoremap <Leader>h :Unite history/yank<CR>
+" nnoremap <Leader>e :Unite -start-insert symfony/entities<CR>
+" nnoremap <Leader>b :Unite -start-insert symfony/bundles<CR>
 vmap <Leader>s :InsertBothGetterSetter<CR>
 
-
-if OS == 'linux'
-  let g:lock = "✎"
-else
-  let g:lock = "🔒""
-endif
+let g:lock = "🔒""
 
 let g:lightline = {
       \ 'colorscheme': 'Tomorrow_Night',
@@ -327,15 +286,56 @@ let g:lightline = {
       \ },
 \ }
 
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+let maplocalleader = ','
 
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" function! IPhpInsertUse()
+"     call PhpInsertUse()
+"     call feedkeys('a',  'n')
+" endfunction
+" autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+" function! IPhpExpandClass()
+"     call PhpExpandClass()
+"     call feedkeys('a', 'n')
+" endfunction
+" autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
 
-" php complete
-let g:phpcomplete_index_composer_command = "composer"
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Use neocomplete.
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" https://github.com/Shougo/neosnippet.vim/issues/184
+let g:neocomplete#enable_auto_select = 0
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+" let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+imap <silent><expr><CR> pumvisible() ? "\<C-y>\<Plug>(neosnippet_expand)" : "\<CR>"
+imap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+imap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
+" <TAB>: completion.
+imap <silent><expr><TAB> neosnippet#expandable_or_jumpable() ?
+            \ "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ?
+            \ "\<C-n>" : "\<TAB>")
+" Shift tab (C-p)
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : ""
+
+" auto remove/hi trailing space
+autocmd BufWritePre * :%s/\s\+$//e
+" match Todo /\s\+$/
+" hi Todo term=bold ctermfg=Red guifg=#ffffff gui=bold
