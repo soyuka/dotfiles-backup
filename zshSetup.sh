@@ -1,5 +1,6 @@
 git clone https://github.com/rupa/z
 cd z && make
+sudo make install
 cd ..
 cp .zshrc ~/.zshrc
 mkdir -p ~/.config/zsh/ 
