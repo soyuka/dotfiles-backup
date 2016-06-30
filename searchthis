@@ -1,0 +1,1079 @@
+sudo apt-get update && apt-get install python python-dev ruby ruby-dev git i3 xdm tmux lua lua-dev urxvt wicd arandr pavucontrol firmware-linux-nonfree broadcom-sta-dkms 
+su
+exit
+sudo apt-get update && apt-get install python python-dev ruby ruby-dev git i3 xdm tmux lua lua-dev urxvt wicd arandr pavucontrol firmware-linux-nonfree broadcom-sta-dkms 
+sudo apt-get install python python-dev ruby ruby-dev git i3 xdm tmux lua lua-dev urxvt wicd arandr pavucontrol firmware-linux-nonfree broadcom-sta-dkms 
+sudo apt-get install python python-dev ruby ruby-dev git i3 xdm tmux lua-5.3 lua-5.3-dev urxvt wicd arandr pavucontrol firmware-linux-nonfree broadcom-sta-dkms 
+sudo apt-get install python python-dev ruby ruby-dev git i3 xdm tmux lua urxvt wicd arandr pavucontrol firmware-linux-nonfree broadcom-sta-dkms 
+cat /etc/apt/sources.list
+sudo apt-get install python python-dev ruby ruby-dev git i3 xdm tmux lua rxvt-unicode wicd arandr pavucontrol firmware-linux-nonfree broadcom-sta-dkms 
+sudo apt-get install python python-dev ruby ruby-dev git i3 xdm tmux lua5.3 lua5.3-dev rxvt-unicode wicd arandr pavucontrol firmware-linux-nonfree broadcom-sta-dkms 
+sudo apt-get install build-essential httpie jq python python-dev ruby ruby-dev git i3 xdm tmux lua5.3 lua5.3-dev rxvt-unicode wicd arandr pavucontrol firmware-linux-nonfree broadcom-sta-dkms 
+git clone https://github.com/soyuka/dotfiles
+cd dotfiles/
+git checkout hp
+ls
+cp .xsession ..
+ls
+cp .Xresources ..
+cp .Xmodmap ..
+cd ..
+ls
+vim .xsession 
+vi .xsession 
+less .Xmodmap 
+vim .Xmodmap 
+vi .Xmodmap 
+ls
+ls -la
+cp -r dotfiles/i3/ .config/
+ls .config/
+sudo reboot
+i3
+dmesg
+sudo apt-get info iw
+sudo apt-cache info iw
+modprobe load wl
+sudo apt-get install modprobe
+sudo modprobe load wl
+dmesg | less
+sudo apt-get install firmware-realtek
+dmesg | less
+sudo apt-get install firmware-iwlwifi
+sudo apt-get remove firmware-linux-nonfree firmware-misc-nonfree 
+sudo apt-get autoremove
+sudo reboot
+dmesg | less
+sudo apt-get install firmware-nonfree
+sudo apt-get install firmware-linux-nonfree 
+xdm
+sudo xdm
+vim /etc/X11/default-display-manager 
+vi /etc/X11/default-display-manager 
+sudo reboot
+dmesg | less
+i3
+xdm --help
+sudo xdm --help
+sudo xdm
+xdm start
+sudo xdm start
+startx
+xinit -- :1
+vim /etc/X11/xdm/Xsession 
+vi /etc/X11/xdm/Xsession 
+ls
+sudo apt-get install startx
+ps -ef | grep xdm
+xdm
+sudo xdm
+ps -ef | grep xdm
+i3
+i3 :0
+sudo apt-get remove xdm
+sudo apt-get autoremove
+sudo apt-get install slim
+sudo reboot
+slim
+exit
+cat /var/log/xdm.log 
+cat /var/log/slim.log 
+sudo service xserver start
+sudo apt-get install xserver
+sudo apt-get install xserver-xorg
+sudo service xserver start
+ls /etc/init.d/xser
+xerver
+sudo reboot
+pwd
+su -c "echo 'deb http://dl.google.com/linux/chrome/dev/ stable main' >> /etc/apt/sources.list.d/google-chrome" 
+cat /etc/apt/sources.list.d/google-chrome 
+sudo apt-get update && sudo apt-get install google-chrome
+sudo apt-get update && sudo apt-get install google-chrome-stable
+su -c "echo 'deb http://dl.google.com/linux/chrome/dev/ stable main' >> /etc/apt/sources.list.d/google-chrome.list" 
+sudo apt-get update && sudo apt-get install google-chrome
+sudo apt-get update && sudo apt-get install google-chrome-stable
+rm /etc/apt/sources.list.d/google-chrome 
+sudo rm /etc/apt/sources.list.d/google-chrome 
+vim /etc/apt/sources.list.d/google-chrome.list 
+vi /etc/apt/sources.list.d/google-chrome.list 
+sudo apt-get update
+vi /etc/apt/sources.list.d/google-chrome.list 
+wget
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo apt-get update
+vi /etc/apt/sources.list.d/google-chrome.list 
+sudo apt-get update
+sudo rm /etc/apt/sources.list.d/google-chrome.list 
+sudo apt-get update
+X
+sudo apt-get install firefox
+sudo apt-get install firefox-esr
+vim dotfiles/.Xresources 
+vi dotfiles/.Xresources 
+vi dotfiles/zshSetup.sh 
+vi dotfiles/vimSetup.sh 
+cat dotfiles/vimSetup.sh | head -n 2
+$(cat dotfiles/vimSetup.sh | head -n 2)
+git clone --depth 1 https://github.com/adobe-fonts/source-code-pro
+cd source-code-pro/
+ls
+bash build.
+bash build.sh 
+ls
+cat dotfiles/vimSetup.sh | head -n 2
+cat ../dotfiles/vimSetup.sh 
+git checkout $(git describe --abrev=0 --tags)
+git checkout $(git describe --abbrev=0 --tags)
+cat ../dotfiles/vimSetup.sh 
+cd ..
+rm -r source-code-pro/
+rm -rf source-code-pro/
+cd Downloads/
+ls
+unzip source-code-pro-2.010R-ro-1.030R-it.zip -d source-code
+cd source-code/source-code-pro-2.010R-ro-1.030R-it/
+ls
+sudo mkdir /usr/share/fonts/truetype/source-code-pro && sudo cp -r TTF/SourceCodePro-*.ttf /usr/share/fontts/truetype/source-code-pro
+sudo cp -r TTF/SourceCodePro-*.ttf /usr/share/fonts/truetype/source-code-pro/
+ls
+cd dotfiles/
+vim vimSetup.sh
+vi vimSetup.sh 
+less vimSetup.sh 
+bash vimSetup.sh 
+less vimSetup.sh 
+cat vimSetup.sh 
+cp Tomorrow-Night.vim ~/.vim/colors/
+cp .vimrc ..
+vim --version
+vim --version|grep lua
+vim boot.sh 
+sudo apt-get install nm-applet
+sudo apt-get install rofi
+vim .config/i3/config 
+vi .config/i3/config 
+vi dotfiles/boot.sh 
+vim .bash_history 
+cat .bash_history | grep -v cat 
+cat .bash_history | grep -v cat -v ls
+cat .bash_history | grep -v cat | grep -v ls | grep -v vim
+cat .bash_history | grep -v cat | grep -v ls | grep -v vim | grep -v vi
+cat .bash_history | grep -v cat | grep -v ls | grep -v vim | grep -v vi | grep -v pwd
+cat .bash_history | grep -v cat | grep -v ls | grep -v vim | grep -v vi | grep -v pwd | grep -v exit
+cat .bash_history | grep -v cat | grep -v ls | grep -v vim | grep -v vi | grep -v pwd | grep -v exit | vim - 
+cat .bash_history | grep -v cat | grep -v ls | grep -v vim | grep -v vi | grep -v pwd | grep -v exit | vi - 
+vim dotfiles/boot.sh 
+vi dotfiles/boot.sh 
+sudo apt-get remove wicd
+sudo apt-get install network-manager
+sudo apt-get install wicd
+nm-applet
+sudo apt-get install network-manager-applet
+sudo modprobe wl
+sudo apt-get install wl
+sudo modprobe wl
+sudo apt-get remove wl
+sudo apt-get autoremove
+sudo apt-get install iwlwifi
+ifconfig
+sudo ifconfig
+lspci | grep -i intel
+lspci | grep -i wireless
+lspci -vv -s 02:00.0
+modinfo iwlwifi
+sudo modinfo iwlwifi
+sudo update-pciids
+less dotfiles/boot.sh 
+cat dotfiles/boot.sh 
+sudo apt-get remove wl firmware-iwlwifi
+vi dotfiles/boot.sh 
+sudo apt-get install broadcom-sta-dkms 
+sudo reboot
+modprobe wl
+sudo modprobe wl
+dmesg | grep -i wire
+dmesg | less
+sudo apt-get remove broadcom-sta-dkms && sudo apt-get autoremove
+dmesg | grep -i wire
+dmesg | grep -i wifi
+sudo apt-get install firmware-iwlwifi 
+sudo apt-get upgrade
+sudo apt-get autoremove
+sudo reboot
+dmesg
+sudo ifconfig
+sudo reboot
+dmesg
+modinfo iwlwifi
+sudo modinfo iwlwifi
+sudo modprobe iwlmvm iwlwifi
+sudo update-initramfs -u -k $(uname -r)
+dmesg
+dmesg | grep -i 7265
+uname -r
+sudo apt-get remove firmware-iwlwifi
+cd Downloads/
+ls
+tar -xzvf iwlwifi-7265-ucode-16.242414.0.tgz 
+cd iwlwifi-7265-ucode-16.242414.0/
+ls
+ls /lib/firmware/
+ls /lib/firmware/amd-ucode/
+ls
+mv iwlwifi-7265*.ucode /lib/firmware/
+sudo mv iwlwifi-7265*.ucode /lib/firmware/
+sudo modprobe iwlwifi
+sudo ifconfig
+sudo reboot
+sudo rm /lib/firmware/iwlwifi-7265*
+dmesg | less
+cd Downloads/
+tar -xzvf iwlwifi-7265-ucode-16.242414.0.tgz 
+cd iwlwifi-7265-ucode-16.242414.0/
+sudo mv iwlwifi-7265*.ucode /lib/firmware/
+sudo modprobe iwlwifi
+dmesg
+cd ..
+ls
+sudo dpkg -i firmware-iwlwifi_20160110-1~bpo8+1_all.deb 
+cat /var/log/messages 
+sudo cat /var/log/messages 
+sudo ifconfig
+sudo wlan0 up
+sudo ifconfig wlan0 up
+sudo ifconfig
+sudo ifconfig --help
+sudo reboot
+sudo dmesg | less
+sudo ifconfig
+sudo ifconfig up eth0
+sudo ifconfig eth0 up
+sudo modprobe -r iwlwifi ; modprobe iwlwifi
+iwconfig
+sudo apt-get install iwconfig
+ls
+cd Downloads/
+ls
+sudo dpkg --remove ./firmware-iwlwifi_20160110-1*.deb
+sudo dpkg --remove firmware-iwlwifi
+sudo apt-get install iwlwifi
+sudo apt-get install firmware-iwlwifi
+sudo modprobe iwlwifi
+dmesg | grep rev
+dmesg | grep wifi
+ls
+sudo apt-get remove --purge firmware-iwlwifi
+ls iwlwifi-7265-ucode-16.242414.0
+rm -rf iwlwifi-7265-ucode-16.242414.0/
+ls
+tar -xzvf iwlwifi-7265-ucode-16.242414.0.tgz 
+cd iwlwifi-7265-ucode-16.242414.0/
+ls
+less README.iwlwifi-7265-ucode 
+sudo apt-get install firmware-iwlwifi
+cp iwlwifi*.ucode /lib/firmware/
+sudo cp iwlwifi*.ucode /lib/firmware/
+sudo modprobe --help
+sudo modprobe -nv iwlwifi
+sudo modprobe -n -v iwlwifi
+sudo reboot
+dmesg | less
+su
+vim .xsession
+mkdir .tmp
+vim dotfiles/urxvt.sh 
+sudo apt-get install xsel xclip
+vim .xsession
+vim --version | grep lua
+sudo apt-get build-dep vim-gnome
+sudo apt-get update
+sudo apt-get build-dep vim-gnome
+mkdir /usr/include/lua5.3/include
+sudo mkdir /usr/include/lua5.3/include
+sudo mv /usr/include/lua5.3/*.h /usr/include/lua5.3/include/
+sudo apt-get install luajit libluajit-5.1-dev
+sudo ln -s /usr/bin/luajit-2.0.4 /usr/bin/luajit
+cd
+ls
+cd dotfiles/
+ls
+cd vim/
+ls
+cd src/
+make distclean
+cat ../../vimSetup.sh 
+./configure --with-features=huge --enable-multibyte --enable-rubyinterp --with-python-config-dir=/usr/lib/python2.7/config --enable-perlinterp --enable-luainterp --with-luajit --enable-fail-if-missing --with-lua-prefix=/usr/include/lua5.3 --enable-cscope
+sudo apt-get install libperl-dev
+./configure --with-features=huge --enable-multibyte --enable-rubyinterp --with-python-config-dir=/usr/lib/python2.7/config --enable-perlinterp --enable-luainterp --with-luajit --enable-fail-if-missing --with-lua-prefix=/usr/include/lua5.3 --enable-cscope
+make
+sudo apt-get install liblua5.1-dev luajit libluajit-5.1 
+make
+cd ..
+apt-get source vim
+sudo vim /etc/apt/sources.list
+apt-get update
+sudo apt-get update
+sudo apt-get source vim
+ls
+cd vim-7.4.1829/
+ls
+vim debian/rules 
+dpkg-buildpackage -i -l -j16
+dpkg-buildpackage -i -I -j16
+dpkg-buildpackage -i -I -j16 -d
+dpkg-buildpackage -i -l -j16 -d
+dpkg-buildpackage -i -j16 -d
+sudo sudo dpkg-buildpackage -i -j16 -d
+cd ..
+rm -rf vim-7.4.1829/
+sudo rm -rf vim-7.4.1829/
+ls
+rm vim_7.4.1829-1.debian.tar.xz 
+sudo rm vim_7.4.1829-1.debian.tar.xz 
+sudo rm vim_7.4.1829*
+ls
+cd vim/
+./configure --with-features=huge --enable-multibyte --enable-rubyinterp --with-python-config-dir=/usr/lib/python2.7/config --enable-perlinterp --enable-luainterp --with-luajit --enable-fail-if-missing --with-lua-prefix=/usr/include/lua5.3 --enable-cscope
+make
+sudo apt-get remove lua-5.3
+sudo apt-get remove lua5.3 
+sudo apt-get install lua5.1
+sudo mkdir /usr/include/lua5.1/include
+ls /usr/include/lua5.1/
+sudo mv /usr/include/lua5.1/*.h /usr/include/lua5.1/include/
+sudo apt-get remove luajit 
+sudo mv /usr/include/lua5.1/*.h //usr/include/lua5.1/
+sudo mv /usr/include/lua5.1/include/*.h //usr/include/lua5.1/
+sudo ln -s /usr/include/luajit-2.0 /usr/include/lua5.1/include
+ls /usr/include/lua5.1/include/
+./configure --with-features=huge --enable-multibyte --enable-rubyinterp --with-python-config-dir=/usr/lib/python2.7/config --enable-perlinterp --enable-luainterp --with-luajit --enable-fail-if-missing --with-lua-prefix=/usr/include/lua5.1 --enable-cscope
+make
+sudo reboot
+dmesg | less
+ifconfig
+sudo ifconfig
+dmesg | less
+sudo ls /lib/firmware/
+sudo mv /lib/firmware/iwlwifi-3165-12.ucode /lib/firmware/iwlwifi-7265-12.ucode
+sudo rm /lib/firmware/iwlwifi-*
+ls
+cd Downloads/
+ls
+rm ./firmware-iwlwifi_20160110-1~bpo8+1_all.deb 
+ls
+cd iwlwifi-7265-ucode-16.242414.0/
+ls
+cd ..
+rm -r iwlwifi-7265-ucode-16.242414.0/
+ls
+rm iwlwifi-7265-ucode-16.242414.0\(1\).tgz 
+tar -xzvf iwlwifi-7265-ucode-16.242414.0.tgz 
+cd iwlwifi-7265-ucode-16.242414.0/
+sudo mv iwlwifi-7265D-16.ucode /lib/firmware/
+sudo reboot
+dmesg | less
+ifconfig
+sudo ifconfig
+sudo shutdown 
+sudo shutdown now
+sudo ifconfig
+sudo dmesg | less
+sudo ifconfig
+sudo dmesg | less
+echo "blacklist ideapad_laptop" | sudo tee /etc/modprobe.d/ideapad.conf
+sudo reboot
+sudo ifconfig
+dmesg | less
+ls
+cd Downloads/
+ls
+sudo mv iwlwifi-7265-ucode-16.242414.0/iwlwifi-7265-16.ucode /lib/firmware
+sudo reboot
+sudo dmesg | less
+lspci
+lspci -k
+wget -N -t 5 -T 10 https://github.com/UbuntuForums/wireless-info/raw/master/wireless-info && chmod +x wireless-info && ./wireless-info
+cat wireless-info.txt 
+cat wireless-info.txt  | less
+sudo ./wireless-info 
+cat wireless-info.txt  | less
+sudo wicd
+sudo ifup wlan0
+sudo ifup wlan1
+git clone https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/iwlwifi-fixes.git
+git --depth 1 clone https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/iwlwifi-fixes.git
+git clone --depth 1 https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/iwlwifi-fixes.git
+cd iwlwifi-fixes/
+ls
+ls firmware/
+less Makefile 
+make
+ls
+less README
+cd ..
+rm -rf iwlwifi-fixes/
+git clone --depth 1 https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/linux-firmware.git
+cd linux-firmware/
+ls
+ls /lib/firmware/
+sudo cp iwlwifi-7265*.ucode /lib/firmware/
+sudo reboot
+dmesg 
+sudo ip
+sudo ip I
+sudo ip l
+sudo ip l set wlp2s0 up
+sudo rfkill list
+less /sys/class/rfkill/rfkill1/soft 
+sudo rfkill list
+sudo ip l set wlp2s0 up
+sudo ifconfig
+sudo shutdown
+sudo shutdown now
+sudo rfkill list
+sudo ifconfig
+sudo ip l set wlp2s0 up
+sudo ifconfig
+ls
+rm wireless-info.txt 
+./wireless-info 
+sudo iwconfig
+sudo iwconfig wlps2s0 power off
+sudo iwconfig wlp2s0 power off
+sudo iwconfig
+sudo modprobe -r acer_wm
+sudo dmesg | grep -i wifi
+sudo dmesg | grep -i wifi | pbcopy
+sudo dmesg | grep -i wifi | xclip -sel
+sudo dmesg | grep -i wifi | xclip
+$[    6.396550] Intel(R) Wireless WiFi driver for Linux
+[    6.396742] iwlwifi 0000:02:00.0: enabling device (0000 -> 0002)
+[    6.399411] iwlwifi 0000:02:00.0: Unsupported splx structure
+[    6.408473] iwlwifi 0000:02:00.0: firmware: direct-loading firmware iwlwifi-7265D-20.ucode
+[    6.409160] iwlwifi 0000:02:00.0: loaded firmware version 20.332117.0 op_mode iwlmvm
+[    6.430771] iwlwifi 0000:02:00.0: Detected Intel(R) Dual Band Wireless AC 3165, REV=0x210
+[    6.430934] iwlwifi 0000:02:00.0: L1 Enabled - LTR Enabled
+[    6.431201] iwlwifi 0000:02:00.0: L1 Enabled - LTR Enabled
+[    6.506648] iwlwifi 0000:02:00.0 wlp2s0: renamed from wlan0
+[   31.626744] iwlwifi 0000:02:00.0: L1 Enabled - LTR Enabled
+[   31.627002] iwlwifi 0000:02:00.0: L1 Enabled - LTR Enabled
+[   31.688816] iwlwifi 0000:02:00.0: L1 Enabled - LTR Enabled
+[   31.689104] iwlwifi 0000:02:00.0: L1 Enabled - LTR Enabled
+sudo dmesg | grep -i wifi | xclip
+sudo dmesg | grep -i wifi > dmsg
+sudo apt-get install network-manager
+network-manager
+rm wireless-info
+rm wireless-info.txt
+cat ~/.bash_history |grep wireless-info
+wget -N -t 5 -T 10 https://github.com/UbuntuForums/wireless-info/raw/master/wireless-info && chmod +x wireless-info && ./wireless-info
+ls
+uname -r
+sudo iwconfig
+sudo ip l
+sudo ip wlp2s0 up
+sudo ip l wlp2s0 up
+sudo ip l set wlp2s0 up
+sudo iwconfig
+ls
+cat dmsg 
+sudo rfkill list
+uname -r
+rm wireless-info.tar.gz 
+rm wireless-info.txt
+./wireless-info 
+rm wireless-info.txt 
+sudo ./wireless-info 
+echo "git clone --depth 1 https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/linux-firmware.git" > lalala
+sudo apt-cache search nm-applet
+sudo apt-cache search nm-
+sudo apt-cache search network
+sudo apt-cache search network-manager
+sudo iwconfig
+sudo ifconfig
+sudo apt-get install network-manager-applet
+networkctl 
+sudo service systemd-networkd
+sudo apt-get install networkd
+sudo service network-manager status
+sudo networkctl 
+ls
+rm wireless-info.tar.gz 
+sudo rm wireless-info.tar.gz 
+sudo rm wireless-info.txt 
+sudo wireless-info
+sudo ./wireless-info
+less wireless-info.txt 
+/usr/sbin/NetworkManager 
+sudo /usr/sbin/NetworkManager 
+sudo /usr/sbin/NetworkManager --help
+networkctl 
+sudo apt-get remove wicd
+sudo apt-get autoremove
+sudo apt-get install rfkill
+sudo apt-get update
+sudo apt-get upgrade
+ls /etc/NetworkManager/conf.d/
+ls /etc/NetworkManager/*
+sudo apt-get install network-manager-applet
+sudo apt-get install network-manager-gnome
+sudo network-manager-gnome
+ls /usr/sbin/
+ls /usr/sbin/netw*
+sudo reboot
+sudo iwconfig
+sudo /usr/sbin/NetworkManager 
+less /etc/init.d/network-manager 
+systemctl enable NetworkManager
+sudo systemctl enable NetworkManager
+sudo reboot
+ls
+mv wireless-info dotfiles/
+
+echo 'wget -N -t 5 -T 10 https://github.com/UbuntuForums/wireless-info/raw/master/wireless-info && chmod +x wireless-info && ./wireless-info' >> dotfiles/wireless-info.sh
+ls
+rm wireless-info.txt 
+rm lalala 
+rm dmsg 
+rm -rf linux-firmware/
+cd dotfiles/
+ls
+rm wireless-info
+ls ../.config/
+ls ../.config/i3
+less ../.Xresources 
+git branch
+less .Xresources 
+cd ..
+apt-get install liblua5.2-dev
+sudo apt-get install liblua5.2-dev python-dev
+sudo apt-get install liblua5.2-dev python-dev xorg-dev
+ls
+less dotfiles/vimSetup.sh 
+git clone --depth=1 https://github.com/vim/vim
+cd vim/src/
+make distclean
+./configure --help
+./configure --with-features=huge --enable-multibyte --enable-rubyinterp --enable-pythoninterp --enable-python3interp --enable-perlinterp --enable-luainterp --with-luajit --enable-fail-if-missing --with-x --enable-cscope
+sudo apt-get install python3-dev
+./configure --with-features=huge --enable-multibyte --enable-rubyinterp --enable-pythoninterp --enable-python3interp --enable-perlinterp --enable-luainterp --with-luajit --enable-fail-if-missing --with-x --enable-cscope
+make
+sudo make install
+vim --version
+vim --version | grep lua
+vim --version | grep clipboard
+cd ..
+ls
+rm -rf vim/
+less ~/.bash_history 
+vim /etc/systemd/logind.conf 
+vim .xsession
+xautolock
+sudo apt-get install xautolock
+ls
+sudo reboot
+pwd
+vim .xsession
+sudo reboot
+sudo vim /etc/systemd/logind.conf 
+sudo systemctl hibernate
+vim .xsession
+vim .vimrc 
+rm -rf ~/.vim/bundle/vimproc.vim/
+cd .vim/bundle/
+ls
+cd Vundle.vim/
+ls
+git pull
+git branch
+git log
+cd ..
+vim +PluginInstall
+s
+ls
+rm -rf Vundle.vim/
+git clone git@github.com:VundleVim/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim --depth=1
+vim .vimrc
+cd ..
+vim .vimrc 
+vim +PluginInstall
+vim
+sudo systemctl hibernate
+sudo xrdb -merge .Xresources 
+man rofi
+sudo xrdb -merge .Xresources 
+vim .Xresources 
+sudo xrdb -merge .Xresources 
+vim .config/i3status/config 
+vim .config/i3/config 
+sudo apt-get install xbacklight
+vim .Xresources 
+sudo apt-get install xbacklight
+sudo xrdb -merge .Xresources 
+vim .Xresources 
+vim .config/tmux.bash
+vim .zshr
+vim .zshrc
+wpd
+pwd
+vim .config/i3/config 
+pwd
+ls
+rm lettremotivjason.txt 
+vim .vimrc 
+pwd~
+vim
+ls
+vim .config/i3/config 
+ls
+ls Downloads/
+cd Downloads/
+git clone https://github.com/chriskempson/base16-shell --depth=1
+cd base16-shell/
+ls
+bash colortest 
+ls scripts/
+bash scripts/base16-tomorrow
+bash scripts/base16-tomorrow-night.sh 
+ls
+bash scripts/base16-tomorrow
+./colortest l
+cd 
+cp dotfiles/.zshrc 
+cp dotfiles/.zshrc .
+vim .zshrc 
+cp -r dotfiles/zsh/ .config/zsh
+cd .config/zsh/
+ls
+vim specific.sh 
+cd ..
+cp dotfiles/.tmux.conf .
+vim .tmux.conf 
+less dotfiles/tmux.sh 
+cd dotfiles/
+bash tmux.sh 
+less zshSetup.sh 
+sudo apt-get install zsh
+ls /etc/shells 
+cay /etc/shells 
+cat /etc/shells 
+sudo chsh -s /bin/zsh 
+sudo reboot
+vim .tmux.conf 
+tmux source-file .tmux.conf
+vim .tmux.conf 
+tmux source-file .tmux.conf
+echo $SHELL
+sudo chsh -s /bin/zsh 
+zsh
+tmux -u -2
+cd dotfiles/
+vim zshSetup.sh 
+bash zshSetup.sh 
+less zshSetup.sh 
+vim zshSetup.sh 
+cd ..
+zsh
+exit
+tmux kill-server
+chsh
+exit
+chsh -s /bin/zsh
+exirt
+exit
+echo $SHELL
+sudo reboot
+echo $SHELL
+sudo logout
+: 1467152077:0;tmux kill-server
+: 1467152200:0;ls
+: 1467152202:0;vim
+: 1467152208:0;cd dotfiles
+: 1467152208:0;ls
+: 1467152210:0;cd ..
+: 1467152211:0;ls
+: 1467152217:0;ls .z
+: 1467152218:0;ls -l
+: 1467152220:0;ls -la
+: 1467152224:0;cd .z
+: 1467152224:0;ls
+: 1467152228:0;rm -r .z
+: 1467152276:0;git clone https://github.com/rupa/z .z
+: 1467152280:0;vim .z
+: 1467152283:0;cd .z
+: 1467152283:0;ls
+: 1467152287:0;gst
+: 1467152289:0;cd .
+: 1467152291:0;..
+: 1467152295:0;vim dotfiles/zshSetup.sh
+: 1467152312:0;ls
+: 1467152326:0;vim .config/i3
+: 1467152372:0;cp -r .config/i3 .config/i3.bak
+: 1467152380:0;npm
+: 1467152400:0;wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
+: 1467152410:0;source ~/.zshrc
+: 1467152422:0;cd ../.z
+: 1467152426:0;cd .z
+: 1467152427:0;ls
+: 1467152429:0;cd ..
+: 1467152432:0;mv .z z
+: 1467152433:0;cd z
+: 1467152435:0;make
+: 1467152439:0;sudo make install
+: 1467152451:0;ls
+: 1467152462:0;mv z.sh ~/.config/zsh/
+: 1467152463:0;cd ..
+: 1467152465:0;rm -r z
+: 1467152469:0;rm -fr z
+: 1467152471:0;cd do
+: 1467152473:0;cd dotfiles
+: 1467152485:0;vim zshSetup.sh
+: 1467152527:0;cd ..
+: 1467152532:0;npm
+: 1467152536:0;source .zshrc
+: 1467152541:0;nvm install 6
+: 1467152562:0;npm install -g i3-style
+: 1467152627:0;i3-style base16-tomorrow -o ~/.i3/config --reload
+: 1467152642:0;i3-style base16-tomorrow -o ~/.config/i3/config --reload
+: 1467152662:0;vim .config/i3/config
+: 1467152849:0;git clone https://github.com/soyuka/explorer
+: 1467152858:0;cd explorer
+: 1467152858:0;ls
+: 1467152859:0;vim
+: 1467152919:0;vim .vimr
+: 1467152926:0;vim ../.vimrc
+: 1467152968:0;sudo shutdown
+: 1467152974:0;vim ../.vimrc -t now
+: 1467152978:0;sudo shutdown -t now
+: 1467181951:0;sudo apt-get install gtk2-engines-murrine
+: 1467182017:0;echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/Debian_8.0/ /' >> /etc/apt/sources.list.d/arc-theme-solid.list 
+: 1467182018:0;su
+: 1467229269:0;sudo apt-cache search adobe
+: 1467229274:0;sudo apt-cache search adobe-flash
+: 1467229282:0;sudo apt-cache search flash
+: 1467229293:0;sudo apt-get install flashplugin-nonfree
+: 1467229358:0;cat dotfiles/doc
+: 1467230414:0;su 
+: 1467230449:0;sudo apt-get remove gtk2-engines-murrine
+: 1467230461:0;sudo apt-get remove gnome-themes-standard
+: 1467230485:0;sudo apt-get autoremove
+: 1467230497:0;ls
+: 1467230499:0;cd Downloads
+: 1467230499:0;ls
+: 1467230525:0;sudo apt-get remove arc-theme
+: 1467230536:0;sudo apt-get update
+: 1467230539:0;sudo apt-get remove arc-theme
+: 1467230565:0;rm /etc/apt/sources.list.d/arc-theme-solid.list
+: 1467230583:0;sudo apt-get remove apache2 --purge
+: 1467230615:0;cat ~/.zsh_history
+: 1467230619:0;cat ~/.zsh_history \ grep su
+: 1467230624:0;cat ~/.zsh_history | grep su
+: 1467230629:0;cat ~/.zsh_history | grep install
+: 1467230635:0;sudo apt-get upgrade
+: 1467230710:0;dpkg --get-selections | grep -v deinstall
+: 1467230753:0;dpkg --get-selections | grep -v deinstall | grep theme
+: 1467230892:0;sudo reboot
+: 1467231012:0;sudo apt-get remove pcmanfm
+: 1467231026:0;sudo apt-get autoremove
+: 1467231040:0;sudo reboot
+: 1467231148:0;vim .config/i3/config 
+: 1467231297:0;sudo apt-cache search logitech
+: 1467231306:0;sudo apt-get install solaar
+: 1467231611:0;sudo apt-get install lxappearance gtk-chtheme qt4-qtconfig
+: 1467231642:0;vim .config/i3/config
+: 1467231750:0;dpkg --get-selections | grep -v deinstall | grep theme
+: 1467231763:0;sudo apt-get remove adwaita-icon-theme gnome-icon-theme hicolor-icon-theme
+: 1467231943:0;ls ~/Downloads
+: 1467231947:0;cd ~/Downloads
+: 1467231999:0;vim ../.Xresources
+: 1467232082:0;man urxvt
+: 1467232490:0;ls
+: 1467232497:0;sudo dpkg -i vibrancy-colors_2.7\~xenial\~Noobslab.com_all.deb
+: 1467232991:0;vim ~/.config/i3/config
+: 1467233000:0;man i3
+: 1467233153:0;man i3-config-wizard
+: 1467233763:0;sudo apt-get install nautilus
+: 1467233847:0;sudo dpkg -i google-chrome-stable_current_amd64.deb
+: 1467233913:0;sudo apt-get install gconf-service libgconf-2-4 fonts-liberation libappindicator1 libcurl3 xdg-utils
+: 1467233938:0;sudo apt-get -f install
+: 1467233966:0;sudo apt-get autoremove
+: 1467233988:0;sudo apt-get -f install
+: 1467234126:0;cd
+: 1467234128:0;vim .Xresources
+: 1467234378:0;ls
+: 1467234392:0;sudo reboot
+: 1467234489:0;cat .config/i3/config
+: 1467234492:0;cat .config/i3/log
+: 1467234500:0;ls
+: 1467234562:0;vim
+: 1467234664:0;tput colors
+: 1467234691:0;sudo apt-get remove rxvt-unicode
+: 1467234708:0;tput colors
+: 1467234734:0;vim .tmux.conf
+: 1467234785:0;sudo apt-get install screen-256-color
+: 1467234805:0;sudo apt-get purge rxvt-unicode
+: 1467234814:0;sudo apt-get autoremove
+: 1467234838:0;sudo apt-get install rxvt-unicode-256color
+: 1467234850:0;vim
+: 1467234882:0;vim .config/i3/config
+: 1467234900:0;sudo apt-get install nm-applet solaar
+: 1467234921:0;cat ~/.bash_history|grep applet
+: 1467234925:0;sudo apt-get install network-manager-applet
+: 1467234934:0;cat ~/.bash_history|grep network-manager
+: 1467234942:0;sudo apt-get install network-manager-gnome
+: 1467234965:0;sudo apt-get install solaar
+: 1467234977:0;cat /etc/X11/default-display-manager
+: 1467235083:0;cd Downloads
+: 1467235084:0;ls
+: 1467235089:0;sudo dpkg -r vibrancy-colors
+: 1467235360:0;vim 
+: 1467235375:0;ps -ef | grep chrome
+: 1467235449:0;mkdir /usr/share/slim/themes/slim-minimal
+: 1467235451:0;sudo mkdir /usr/share/slim/themes/slim-minimal
+: 1467235481:0;sudo rm -r /usr/share/slim/themes/slim-minimal
+: 1467235486:0;cd /usr/share/slim/themes
+: 1467235537:0;sudo git clone https://github.com/naglis/slim-minimal
+: 1467235540:0;vim
+: 1467235557:0;sudo vim /usr/share/slim/themes/slim-minimal
+: 1467235566:0;sudo vim /usr/share/slim/themes/slim-minimal/slim.theme
+: 1467235576:0;vim /etc/slim.conf
+: 1467235680:0;slim -p /usr/share/slim/themes/slim-minimal/slim.theme
+: 1467235727:0;vim /etc/slim.conf
+: 1467235739:0;less /var/log/slim.log
+: 1467235744:0;sudo reboot
+: 1467235853:0;cat .screenlayout/home.sh
+: 1467235859:0;vim .xsession
+: 1467235890:0;cat .screenlayout/home.sh
+: 1467235892:0;vim .xsession
+: 1467236165:0;i3lock
+: 1467236228:0;vim .xsession
+: 1467236262:0;man i3lock
+: 1467236332:0;vim .xsession
+: 1467236384:0;man i3lock
+: 1467236387:0;vim .xsession
+: 1467236683:0;sudo reboot
+: 1467236834:0;vim
+: 1467236843:0;vim .xsession
+: 1467236873:0;i3lock -n -u -i ~/.config/i3/i3lock.jpg
+: 1467236885:0;ls .config/i3/i3lock.jpg
+: 1467236976:0;sudo apt-get install mogrify
+: 1467237005:0;sudo apt-get install imagemagick\
+
+: 1467237014:0;ls
+: 1467237016:0;cd Downloads
+: 1467237017:0;ls
+: 1467237019:0;cd ..
+: 1467237022:0;cd .config/i3
+: 1467237023:0;ls
+: 1467237031:0;convert i3lock.jpg i3lock.png
+: 1467237042:0;i3lock -n -u -i ~/.config/i3/i3lock.png
+: 1467237091:0;man i3lock
+: 1467237107:0;vim ../../.xsession
+: 1467237150:0;man i3lock
+: 1467237299:0;cd
+: 1467237301:0;vim .xsession
+: 1467237350:0;sudo apt-get install xscreensaver
+: 1467237368:0;xscreensaver
+: 1467237445:0;sudo apt-get remove xautolock
+: 1467237449:0;vim .xsession
+: 1467237540:0;ls /usr/share/applications/screensavers
+: 1467237545:0;less /usr/share/applications/screensavers/distort.desktop
+: 1467237579:0;ls /usr/lib/xscreensaver/abstractile
+: 1467237582:0;/usr/lib/xscreensaver/abstractile
+: 1467237764:0;xscreensaver
+: 1467237775:0;pkill xscreensaver
+: 1467237777:0;xscreensaver
+: 1467237804:0;sudo apt-get remove xscreensaver
+: 1467237809:0;sudo apt-get purge xscreensaver
+: 1467237837:0;sudo apt-get install xscreensaver
+: 1467237974:0;sudo apt-get remove xscreensaver
+: 1467237980:0;sudo apt-get autoremove
+: 1467238170:0;sudo apt-get install slock
+: 1467238183:0;man slock 
+: 1467238187:0;slock
+: 1467238227:0;pkill slock
+: 1467238262:0;slock
+: 1467238356:0;vim .xsession
+: 1467238409:0;sudo apt-get install xautolock
+: 1467238474:0;rm .config/i3/i3lock.jpg
+: 1467238479:0;vim .xsession
+: 1467238785:0;sudo apt-cache search lock
+: 1467238792:0;sudo apt-cache search lock | grep screen
+: 1467238831:0;sudo apt-get install lightDM
+: 1467238836:0;sudo apt-get install light-dm
+: 1467238843:0;sudo apt-cache search light dm
+: 1467238879:0;sudo apt-get install lightdm
+: 1467238887:0;sudo apt-get install lightdm light-locker
+: 1467238907:0;sudo reboot
+: 1467238947:0;man light-locker
+: 1467238961:0;light-locker
+: 1467238967:0;light-locker --help
+: 1467239048:0;light-locker -l
+: 1467239063:0;sudo apt-get remove --purge lightdm light-locker
+: 1467239084:0;sudo pkill lightdm
+: 1467239110:0;sudo apt-get remove lightdm
+: 1467239117:0;sudo apt-get autoremove
+: 1467239126:0;sudo dpkg-reconfigure x11
+: 1467239142:0;sudo vim /etc/X11/default-display-manager
+: 1467239170:0;sudo reboot
+: 1467239216:0;sudo apt-get install lightdm
+: 1467239230:0;sudo apt-get remove lightdm
+: 1467239237:0;sudo apt-get remove light-locker
+: 1467239242:0;sudo apt-get autoremove
+: 1467239246:0;slim
+: 1467239249:0;exit
+: 1467239437:0;i3lock --help
+: 1467239445:0;vim .xsession
+: 1467239451:0;man i3lock
+: 1467239453:0;vim .xsession
+: 1467239544:0;ls .config/i3/
+: 1467239581:0;sudo reboot
+: 1467239649:0;pkill i3lock
+: 1467239652:0;vim .xsession
+: 1467239676:0;man i3lock
+: 1467239692:0;vim .xsession
+: 1467239703:0;sudo reboot
+: 1467239746:0;vim .xsession
+: 1467239784:0;sudo reboot
+: 1467239824:0;vim .xsession
+: 1467239833:0;man autolock
+: 1467239841:0;man xautolock
+: 1467239990:0;vim .xsession
+: 1467240025:0;sudo vim /etc/X11/xdm/xdm-config
+: 1467240050:0;less /etc/init.d/x11-common
+: 1467240067:0;cat ~/.bash_history|grep -i x11
+: 1467240078:0;vim /etc/X11/xdm/Xsession
+: 1467240085:0;cat ~/.bash_history|grep -i init
+: 1467240100:0;sudo reboot
+: 1467268749:0;vim .xsession
+: 1467268771:0;cat .config/i3/log
+: 1467268780:0;tail .config/i3/log
+: 1467268791:0;rm .config/i3/log
+: 1467268795:0;sudo reboot
+: 1467268968:0;cat .config/i3/log
+: 1467268974:0;ps -ef | grep slim
+: 1467268987:0;cat /var/log/slim.log
+: 1467269000:0;cat /var/log/Xorg.0.log
+: 1467269040:0;dmesg
+: 1467269051:0;vim .xsession
+: 1467269105:0;sudo apt-get remove slim
+: 1467269129:0;sudo apt-get autoremove
+: 1467269135:0;sudo apt-get install slim
+: 1467269142:0;sudo apt-get install scrot
+: 1467269147:0;ls
+: 1467269158:0;cat /etc/X11/default-display-manager
+: 1467269168:0;ps -ef | grep x
+: 1467269172:0;xserver
+: 1467269189:0;Xorg
+: 1467269203:0;sudo reboot
+: 1467269450:0;vim /etc/slim.conf 
+: 1467269480:0;sudo apt-get install xsession
+: 1467269484:0;vim /etc/slim.conf 
+: 1467269503:0;ls /etc/X11/Xsession
+: 1467269506:0;/etc/X11/Xsession
+: 1467269512:0;/etc/X11/Xsession --help
+: 1467269525:0;vim /etc/slim.conf 
+: 1467269531:0;ls
+: 1467269535:0;vim .xsession
+: 1467269561:0;man i3
+: 1467269569:0;vim .xsession
+: 1467269579:0;sudo reboot
+: 1467269628:0;cat /var/log/slim.log
+: 1467269635:0;cat /var/log/Xorg.0.log
+: 1467269647:0;cat /var/log/xdm.log
+: 1467269650:0;cat /var/log/xdm.log.1
+: 1467269657:0;cat /var/log/slim.log
+: 1467269672:0;xsession
+: 1467269679:0;/etc/X11/Xsession
+: 1467269770:0;sudo update-alternatives --config x-window-manager
+: 1467269811:0;vim /etc/slim.conf 
+: 1467269866:0;ls /usr/share/xsessions
+: 1467269875:0;less /usr/share/xsessions/i3.desktop
+: 1467270048:0;tail -F /var/log/slim.log
+: 1467270092:0;vim /etc/slim.conf
+: 1467270128:0;sudo dpkg-reconfigure
+: 1467270132:0;sudo dpkg-reconfigure slim
+: 1467270135:0;sudo dpkg-reconfigure i3
+: 1467270142:0;sudo dpkg-reconfigure xserver-xorg
+: 1467270149:0;sudo dpkg-reconfigure xauth
+: 1467306119:0;i3lock
+: 1467318649:0;sudo apt-get install plasmadesktop
+: 1467318660:0;sudo apt-cache search plasmadesktod
+: 1467318663:0;sudo apt-cache search plasmadesktop
+: 1467318665:0;sudo apt-cache search plasmad
+: 1467318666:0;sudo apt-cache search plasma
+: 1467318669:0;sudo apt-cache search plasma desktop
+: 1467318680:0;sudo apt-get install plasma-desktop
+: 1467319360:0;sudo reboot
+: 1467321359:0;sudo apt-get remove --purge plasma-desktop
+: 1467321439:0;sudo apt-get install cinnamon
+: 1467321551:0;sudo vim /etc/apt/sources.list.d/arc-theme-solid.list
+: 1467321556:0;sudo rm /etc/apt/sources.list.d/arc-theme-solid.list
+: 1467321571:0;sudo vim /etc/apt/sources.list.d/stable.list
+: 1467321614:0;sudo vim /etc/apt/sources.list.d/stable.list /etc/apt/sources.list
+: 1467321732:0;cd Downloads
+: 1467321732:0;ls
+: 1467321742:0;sudo dpkg -i kde-plasma-desktop_84_amd64.deb
+: 1467321748:0;sudo apt-get install -f
+: 1467321769:0;sudo apt-get install -t stable -f
+: 1467321788:0;sudo vim /etc/apt/sources.list.d/stable.list /etc/apt/sources.list
+: 1467321853:0;sudo apt-get update
+: 1467321884:0;sudo apt-get install -t stable -f
+: 1467321933:0;sudo apt-get install -t stable kde-plasma-desktop
+: 1467321942:0;sudo apt-get install -t stretch -f
+: 1467322021:0;sudo apt-get install
+: 1467322090:0;sudo vim /etc/apt/preferences.d/
+: 1467322096:0;sudo ls etc/apt/preferences.d/
+: 1467322100:0;sudo ls /etc/apt/preferences.d/
+: 1467322102:0;sudo ls /etc/apt/
+: 1467322154:0;sudo vim /etc/apt/preferences
+: 1467322191:0;sudo apt-get update
+: 1467322204:0;sudo apt-get upgrade
+: 1467322216:0;sudo apt-get -t stretch upgrade
+: 1467322233:0;sudo apt-get autoremove
+: 1467322237:0;sudo reboot
+: 1467323116:0;ls
+: 1467323123:0;exit
+: 1467323485:0;sudo vim /etc/apt/sources.list.d/stable.list /etc/apt/sources.list
+: 1467323525:0;sudo apt-get update
+: 1467323567:0;sudo apt-get install -t unstable kde-plasma-desktop
+: 1467323575:0;sudo apt-get install -t stretch kde-plasma-desktop
+: 1467323584:0;sudo apt-get upgrade
+: 1467323592:0;sudo vim /etc/apt/preferences
+: 1467323606:0;sudo apt-get update
+: 1467323612:0;sudo apt-get upgrade
+: 1467323639:0;sudo apt-get remove kde-plasma-desktop 
+: 1467323687:0;cat /etc/X11/default-display-manager
+: 1467323691:0;sudo apt-get install sddm
+: 1467323699:0;sudo apt-get autoremove
+: 1467323718:0;sudo apt-get install sddm
+: 1467323728:0;sudo reboot now
+: 1467323774:0;ls
+: 1467323876:0;cp -r .config/i3 .config/i3status .Xresources .Xmodmap .xsession .vimrc .zshrc .tmux.conf .config/zsh/specific.sh dotfiles
+: 1467323899:0;cat ~/.bash_history >> searchthis
+: 1467323904:0;cat ~/.zsh_history >> searchthis
+apt-get install sudo
+sudo apt-get update
+adduser abluchet sudo
+exit
+cd /lib/firmware/
+apt-get remove firmware-iwlwifi
+dmsg
+dmesg | grep -i wifi
+ls
+ls
+ls iwl*
+cd ..
+cd ..
+cd /home/abluchet/Downloads/
+ls
+cd iwlwifi-7265-ucode-16.242414.0
+ls
+sudo cp iwlwifi-7265-16.ucode /lib/firmware/iwlwifi-3165-9.ucode
+sudo cp iwlwifi-7265D-16.ucode /lib/firmware/iwlwifi-3165-12.ucode
+modprobe iwlwifi
+ifconfig
+exit

@@ -1,7 +1,7 @@
 clear Lock
-keycode 66 = Escape
-keycode 12 = 3 numbersign
+! keycode 66 = Escape
+! keycode 12 = 3 numbersign
 ! clear Lock
-! keycode 0x42 = Escape
+keycode 0x42 = Escape
 ! keycode 12 = 3 numbersign
 

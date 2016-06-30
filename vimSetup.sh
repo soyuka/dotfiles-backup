@@ -1,14 +1,15 @@
-git clone git@github.com:vim/vim --depth 1 
+git clone https://github.com/vim/vim --depth 1
 cd vim
 git checkout $(git describe --abbrev=0 --tags)
-./configure --with-features=huge \
-            --enable-multibyte \
-            --enable-rubyinterp \
-            --enable-pythoninterp \
-            --with-python-config-dir=/usr/lib/python2.7/config \
-            --enable-perlinterp \
-            --enable-luainterp \
-            --enable-cscope
+./configure --with-features=huge --enable-multibyte --enable-rubyinterp --enable-pythoninterp --enable-python3interp --enable-perlinterp --enable-luainterp --with-luajit --enable-fail-if-missing --enable-cscope
+# ./configure --with-features=huge \
+#             --enable-multibyte \
+#             --enable-rubyinterp \
+#             --enable-pythoninterp \
+#             --with-python-config-dir=/usr/lib/python2.7/config \
+#             --enable-perlinterp \
+#             --enable-luainterp \
+#             --enable-cscope
 make
 sudo make install
 ## Vundle requires git and curl

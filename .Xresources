@@ -8,7 +8,6 @@ Xft.hintstyle: hintfull
 URxvt*termName: xterm-256color
 
 URxvt*saveLines: 4096
-URxvt*fastScroll: true
 URxvt.scrollBar: false
 
 URxvt*xselectToClipboard: true
@@ -75,3 +74,11 @@ URxvt*color19:      base02
 URxvt*color20:      base04
 URxvt*color21:      base06
 
+rofi.color-enabled: true
+rofi.color-window: #282a2e, #282a2e, #1d1f21
+rofi.color-normal: #373b41, #c5c8c6, #373b41, #282a2e, #e0e0e0
+rofi.color-active: #81a2be, #1d1f21, #81a2be, #282a2e, #81a2be
+rofi.color-urgent: #de935f, #1d1f21, #de935f, #282a2e, #de935f
+rofi.hide-scrollbar: true
+rofi.separator-style: solid
+rofi.bw: 4

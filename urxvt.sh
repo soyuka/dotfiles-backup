@@ -4,3 +4,4 @@ git clone https://github.com/adobe-fonts/source-code-pro /usr/share/fonts/truety
 fc-cache
 cp .Xmodmap ~/.Xmodmap
 cp .Xresources ~/.Xresourec
+mkdir ~/.tmp
