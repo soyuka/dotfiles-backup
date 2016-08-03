@@ -5,7 +5,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimproc.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
 " buffer manager <3
 Plugin 'fholgado/minibufexpl.vim'
 " Syntax checker
@@ -26,6 +31,7 @@ Plugin 'craigemery/vim-autotag'
 "PHP Plugins
 " auto doc php
 Plugin 'tobyS/pdv'
+Plugin 'tobyS/vmustache'
 " phpfolding
 Plugin 'rayburgemeestre/phpfolding.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
@@ -83,6 +89,7 @@ set expandtab
 set smarttab
 set shiftround
 
+set ignorecase
 set incsearch
 set smartcase
 set spelllang=en
@@ -180,9 +187,26 @@ map <Leader>g :TCommentBlock<CR>
 vmap gb :TCommentBlock<CR>
 
 " pdv template dir
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
 nnoremap <C-o> za
 nnoremap <C-S-O> zR
 nnoremap <C-c> zM
+
+"Map ctrl+p
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#custom#source('file_rec/async', 'ignore_pattern', 'vendor\|bower_components\|node_modules\|.git')
+
+nnoremap <C-p> :Unite -start-insert file_rec/async<CR>
+nnoremap <silent> <Leader>/ :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+
+if executable('pt')
+  let g:unite_source_grep_command = 'pt'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+  let g:unite_source_grep_recursive_opt = ''
+  let g:unite_source_grep_encoding = 'utf-8'
+  let g:unite_source_rec_async_command = 'pt --nogroup --nocolor -S -g .'
+endif
 
 let g:lock = "🔒""
 
@@ -204,7 +228,42 @@ let g:lightline = {
       \ },
 \ }
 
+let maplocalleader = ','
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
+
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Use neocomplete.
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" https://github.com/Shougo/neosnippet.vim/issues/184
+let g:neocomplete#enable_auto_select = 0
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+" let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+imap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
+" <TAB>: completion.
+imap <silent><expr><TAB> neosnippet#expandable_or_jumpable() ?
+            \ "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ?
+            \ "\<C-n>" : "\<TAB>")
+" Shift tab (C-p)
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : ""
 
 " auto remove/hi trailing space
 autocmd BufWritePre * :%s/\s\+$//e

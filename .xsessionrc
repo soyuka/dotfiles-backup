@@ -1,0 +1,19 @@
+#!/bin/bash
+# bell disabled in /etc/rc.local
+xset -b
+# localectl set-x11-keymap us intl
+xrdb -merge .Xresources
+xmodmap .Xmodmap
+
+# sh .screenlayout/home.sh
+
+# xautolock -time 10 -locker "~/.config/i3/i3lock.sh" &
+xautolock -detectsleep -time 15 -locker "systemctl hybrid-sleep" &
+
+# echo "Starting at $(date)"  >> ~/.config/i3/log
+# exec /usr/bin/i3 -V >> ~/.config/i3/log
+# if [[ $(xrandr --listproviders | grep number | awk '{print $4}') -eq 3 ]]; then
+#         xrandr --setprovideroutputsource 1 0
+#         xrandr --setprovideroutputsource 2 0
+#         bash ~/.screenlayout/work.sh
+# fi
