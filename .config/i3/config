@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# set $alt Mod1
+set $alt Mod1
 set $mod Mod4
 
 font pango:Source Code Pro 12
@@ -138,6 +138,9 @@ bindsym XF86AudioLowerVolume exec  pactl set-sink-volume 0 -3%
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute 1 toggle
 bindsym XF86Display exec ~/.config/i3/kbdbacklight.sh
+bindsym $alt+Shift+Right exec ~/.config/i3/sp next
+bindsym $alt+Shift+Left exec ~/.config/i3/sp prev
+
 
 # Startup
 exec --no-startup-id compton -b
