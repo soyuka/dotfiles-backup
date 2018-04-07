@@ -168,7 +168,7 @@ bindsym $alt+Shift+Left exec ~/.config/i3/sp prev
 
 # Startup
 exec --no-startup-id compton -b
-exec --no-startup-id feh --bg-fill ~/Pictures/Backgrounds/wallhaven-482641.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/Backgrounds/futurama.jpg
 exec --no-startup-id tmux -u -2 start-server
 # exec --no-startup-id yabar
 # exec --no-startup-id xautolock -locker "i3lock -i ~/Pictures/Backgrounds/wallhaven-489193.png" -detectsleep

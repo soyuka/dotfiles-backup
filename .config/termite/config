@@ -1,8 +1,7 @@
 # vim: ft=dosini cms=#%s
 [options]
-font = Source Code Pro 14
+font = Source Code Pro 10
 
-# font = "Font Awesome 5 Free 12"
 scrollback_lines = 10000
 [colors]
 # Base16 Tomorrow Night
