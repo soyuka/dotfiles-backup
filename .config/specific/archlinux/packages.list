@@ -1,11 +1,11 @@
-tmux 
-i3-gaps
+tmux
 arandr
 pavucontrol
 rofi
 scrot
 zathura
 termite
+otf-font-awesome
 ttf-font-awesome
 ranger
 jq
@@ -17,3 +17,11 @@ xorg-xinit
 adobe-source-code-pro-fonts
 fzf
 firefox-developer-edition
+pulseaudio
+pulseaudio-alsa bc playerctl alsa-utils sysstat
+aurman
+# Battery monitor: acpi
+# AUR
+i3blocks-gaps-git
+i3-gaps
+compton

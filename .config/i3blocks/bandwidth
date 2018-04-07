@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+/usr/lib/i3blocks/bandwidth -i " " -o " "

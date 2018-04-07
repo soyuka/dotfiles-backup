@@ -1,3 +1,4 @@
+xterm*font:     *-fixed-*-*-*-20-*
 ! xft screen configuration
 Xft.geometry: 80x30
 Xft.antialias: true
@@ -52,6 +53,22 @@ URxvt*charClass: 33:48,35:48,37:48,43:48,45-57:48,64:48,95:48,126:48
 ! brown
 #define base0F #a3685a
 
+*black: base00
+*lightblack: base01
+*grey: base02
+*lightgrey: base03
+*darkwhite: base04
+*white: base05
+*foreground: base06
+*red: base08
+*orange: base09
+*yellow: base0A
+*green: base0B
+*cyan: base0C
+*blue: base0D
+*magenta: base0E
+*brown: base0F
+
 URxvt*foreground:   base05
 URxvt*background:   base00
 URxvt*cursorColor:  base05
@@ -86,16 +103,15 @@ URxvt*color21:      base06
 ! Rofi settings
 rofi.color-enabled: true
 !                  background border separator
-rofi.color-window: #282a2e, #373b41, #373b41
+rofi.color-window: base01, base02, base02
 !                  background foreground alt highlight background foreground
-rofi.color-normal: #282a2e, #e0e0e0, #282a2e,          #373b41, #ffffff
-rofi.color-active: #282a2e, #81a2be, #282a2e,          #5e6b8d, #ffffff
-rofi.color-urgent: #de935f, #ffffff, #de935f,          #bf674a, #ffffff
+rofi.color-normal: base01, base06, base01, base02, base07
+rofi.color-active: base01, base0D, base01, #5e6b8d, base07
+rofi.color-urgent: base09, base07, base09, #bf674a, base07
 rofi.eh: 1
 rofi.line-margin: 6
 rofi.bw: 5
 rofi.dpi: 130
 rofi.separator-style: solid
 rofi.hide-scrollbar: true
-! rofi.font: "SourceCodePro 14"
-xterm*font:     *-fixed-*-*-*-20-*
+rofi.font: SourceCodePro 14
