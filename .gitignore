@@ -15,3 +15,7 @@
 !.config/yabar
 !.config/zsh
 !.config/specific
+.vim/*
+!.vim/ftplugin
+!.vim/autoload
+!.vim/colors
