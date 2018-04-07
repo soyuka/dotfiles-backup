@@ -1,0 +1,101 @@
+! xft screen configuration
+Xft.geometry: 80x30
+Xft.antialias: true
+Xft.hinting: true
+Xft.autohint: true
+Xft.hintstyle: hintfull
+Xft.dpi: 130
+XCursor.size: 24
+
+URxvt*saveLines: 4096
+URxvt.scrollBar: false
+
+URxvt*xselectToClipboard: true
+URxvt*trimSelection: true
+! Remove iso14755
+URxvt.iso14755: False
+
+! Locale
+! URxvt.font:9x15bold, xft:SourceCodePro:size=14:antialias=true:autohint=true
+URxvt.font:xft:SourceCodePro:size=14:antialias=true:autohint=true,xft:Font Awesome 5 Free,xft:Symbola,xft:DejaVuSans
+! URxvt.font: xft:SourceCodePro:size=18:antialias=true:autohint=true
+! URxvt.boldFont: xft:SourceCodeProBold:size=10
+! URxvt.letterSpace: 0
+URxvt.cursorBlink: true
+
+! mouse selection
+URxvt*charClass: 33:48,35:48,37:48,43:48,45-57:48,64:48,95:48,126:48
+! Base16 Tomorrow
+! Scheme: Chris Kempson (http://chriskempson.com)
+
+#define base00 #1d1f21
+#define base01 #282a2e
+#define base02 #373b41
+#define base03 #969896
+#define base04 #b4b7b4
+#define base05 #c5c8c6
+#define base06 #e0e0e0
+#define base07 #ffffff
+#define base08 #cc6666
+! orange
+#define base09 #de935f
+! yellow
+#define base0A #f0c674
+! green
+#define base0B #b5bd68
+! cyan
+#define base0C #8abeb7
+! blue
+#define base0D #81a2be
+! purple
+#define base0E #b294bb
+! brown
+#define base0F #a3685a
+
+URxvt*foreground:   base05
+URxvt*background:   base00
+URxvt*cursorColor:  base05
+
+URxvt*color0:       base00
+URxvt*color1:       base08
+URxvt*color2:       base0B
+URxvt*color3:       base0A
+URxvt*color4:       base0D
+URxvt*color5:       base0E
+URxvt*color6:       base0C
+URxvt*color7:       base05
+
+URxvt*color8:       base03
+URxvt*color9:       base08
+URxvt*color10:      base0B
+URxvt*color11:      base0A
+URxvt*color12:      base0D
+URxvt*color13:      base0E
+URxvt*color14:      base0C
+URxvt*color15:      base07
+
+! Note: colors beyond 15 might not be loaded (e.g., URxvt, urxvt),
+! use 'shell' template to set these if necessary
+URxvt*color16:      base09
+URxvt*color17:      base0F
+URxvt*color18:      base01
+URxvt*color19:      base02
+URxvt*color20:      base04
+URxvt*color21:      base06
+
+! Rofi settings
+rofi.color-enabled: true
+!                  background border separator
+rofi.color-window: #282a2e, #373b41, #373b41
+!                  background foreground alt highlight background foreground
+rofi.color-normal: #282a2e, #e0e0e0, #282a2e,          #373b41, #ffffff
+rofi.color-active: #282a2e, #81a2be, #282a2e,          #5e6b8d, #ffffff
+rofi.color-urgent: #de935f, #ffffff, #de935f,          #bf674a, #ffffff
+rofi.eh: 1
+rofi.line-margin: 6
+rofi.bw: 5
+rofi.dpi: 130
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
+! rofi.font: "SourceCodePro 14"
+xterm*font:     *-fixed-*-*-*-20-*

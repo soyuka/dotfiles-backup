@@ -1,0 +1,16 @@
+/*
+!.vimrc
+!.xinitrc
+!.Xmodmap
+!.Xresources
+!.zprofile
+!.zshrc
+!.config
+!.gitconfig
+.config/*
+!.config/i3
+!.config/ranger
+!.config/termite
+!.config/yabar
+!.config/zsh
+!.config/specific
