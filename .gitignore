@@ -19,3 +19,4 @@
 !.vim/ftplugin
 !.vim/autoload
 !.vim/colors
+.config/zsh/soyuka.zsh-theme.antigen-compat
