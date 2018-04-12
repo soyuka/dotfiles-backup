@@ -157,18 +157,21 @@ bindsym $mod+r mode "resize"
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 3 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 3 # decrease screen brightness
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +3%
-bindsym XF86AudioLowerVolume exec  pactl set-sink-volume 0 -3%
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
-bindsym XF86AudioMicMute exec pactl set-source-mute 1 toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks | grep "* index" | awk '{print $3}') +3%
+bindsym XF86AudioLowerVolume exec  pactl set-sink-volume $(pacmd list-sinks | grep "* index" | awk '{print $3}') -3%
+bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks | grep "* index" | awk '{print $3}') toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute $(pacmd list-sources | grep "* index" | awk '{print $3}') toggle
 bindsym XF86Display exec ~/.config/i3/kbdbacklight.sh
-bindsym $alt+Shift+Right exec ~/.config/i3/sp next
-bindsym $alt+Shift+Left exec ~/.config/i3/sp prev
-
+bindsym XF86AudioPlay exec ~/.config/i3/sp.sh play
+bindsym XF86AudioNext exec ~/.config/i3/sp.sh next
+bindsym XF86AudioPrev exec ~/.config/i3/sp.sh prev
+bindsym $mod+Shift+Right exec ~/.config/i3/sp.sh next
+bindsym $mod+Shift+Left exec ~/.config/i3/sp.sh prev
+bindsym $mod+Shift+P exec ~/.config/i3/sp.sh play
 
 # Startup
 exec --no-startup-id compton -b
-exec --no-startup-id feh --bg-fill ~/Pictures/Backgrounds/futurama.jpg
+exec --no-startup-id feh --randomize --bg-fill ~/.wallpaper/*
 exec --no-startup-id tmux -u -2 start-server
 # exec --no-startup-id yabar
 # exec --no-startup-id xautolock -locker "i3lock -i ~/Pictures/Backgrounds/wallhaven-489193.png" -detectsleep

@@ -7,3 +7,7 @@ fi
 if [[ $1 == 'prev' ]]; then
   dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 fi
+
+if [[ $1 == 'play' ]]; then
+  dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+fi

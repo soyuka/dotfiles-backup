@@ -17,7 +17,6 @@ export PATH=$PATH:node_modules/.bin:vendor/bin
 bindkey -e #emacs key bindings
 
 source "$ZSH_CONFIG/antigen.zsh"
-source "$ZSH_CONFIG/aliases.zsh"
 
 antigen use oh-my-zsh
 antigen bundle git
@@ -37,4 +36,5 @@ plugins=(zsh-completions)
 autoload -U compinit
 compinit
 
+source "$ZSH_CONFIG/aliases.zsh"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

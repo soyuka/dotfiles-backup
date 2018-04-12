@@ -1,11 +1,17 @@
 #!/bin/sh
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
+# build this with arandr
+screenlayout=$HOME/.screenlayout/default.sh
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
 # us intl should be before xmodmap
 setxkbmap -layout us -variant intl
+
+if [ -f $screenlayout ]; then
+    sh $screenlayout
+fi
 
 # merge in defaults and keymaps
 
