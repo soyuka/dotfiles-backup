@@ -1,7 +1,2 @@
 #!/bin/bash
-
-if tmux info &> /dev/null; then
-  tmux attach-session
-else
-  tmux -u -2
-fi
+tmux attach-session -t 0 2>&1 > /dev/null || tmux -u -2

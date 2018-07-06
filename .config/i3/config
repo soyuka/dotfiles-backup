@@ -36,7 +36,7 @@ floating_modifier $mod
 focus_follows_mouse yes
 
 # start a terminal
-bindsym $mod+Return exec termite  -e ~/.config/i3/tmux.sh
+bindsym $mod+Return exec termite -e ~/.config/i3/tmux.sh
 bindsym $mod+Shift+Return exec termite
 
 # kill focused window
@@ -88,36 +88,38 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $ws1 ""
-set $ws2 ""
-set $ws3 ""
-set $ws4 ""
-set $ws5 ""
-set $ws6 ""
+set $term ""
+set $web ""
+set $data ""
+set $audio ""
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
+bindsym $mod+1 workspace $term
+bindsym $mod+2 workspace $web
+bindsym $mod+3 workspace $data
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
+bindsym $mod+8 workspace $audio
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 bindsym $mod+Left workspace next
 bindsym $mod+Right workspace prev
 
+workspace $term output DVI-I-1
+workspace $audio output DVI-D-1
+workspace $web output DVI-D-0
+
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+1 move container to workspace $term
+bindsym $mod+Shift+2 move container to workspace $web
+bindsym $mod+Shift+3 move container to workspace $data
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+8 move container to workspace $audio
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
@@ -173,9 +175,9 @@ bindsym $mod+Shift+P exec ~/.config/i3/sp.sh play
 exec --no-startup-id compton -b
 exec --no-startup-id feh --randomize --bg-fill ~/.wallpaper/*
 exec --no-startup-id tmux -u -2 start-server
+exec --no-startup-id ~/.config/i3/init.sh
 # exec --no-startup-id yabar
 # exec --no-startup-id xautolock -locker "i3lock -i ~/Pictures/Backgrounds/wallhaven-489193.png" -detectsleep
-# exec --no-startup-id solaar
 
 bindsym $mod+Shift+x exec ~/.config/i3/lockandsuspend.sh
 bindsym XF86LaunchA exec scrot -s -e 'mv $f ~/Pictures/Screenshots'

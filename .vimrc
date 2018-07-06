@@ -41,6 +41,9 @@ Plug 'rayburgemeestre/phpfolding.vim', {'for': 'php'}
 " " Command to add getter/setter BUGGED
 " Plug 'docteurklein/php-getter-setter.vim', {'for': 'php'}
 
+" SQL plug
+Plug 'shmup/vim-sql-syntax', {'for': 'sql'}
+
 " fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
@@ -84,7 +87,8 @@ if $TMUX != ""
   set t_ut=
 endif
 
-colorscheme base16-tomorrow-night
+"colorscheme base16-tomorrow-night
+colorscheme base16-oceanicnext
 syntax on
 
 " Settings
@@ -210,7 +214,7 @@ let g:NERDTreeChDirMode=1
 let g:NERDTreeShowBookmarks=1
 " NERDTree window size
 let g:NERDTreeWinSize=35
-let g:NERDTreeBookmarksFile = $HOME ."/.vim/bundle/nerdtree/bookmarks"
+let g:NERDTreeBookmarksFile = $HOME ."/.vim/bookmarks"
 let g:NERDTreeShowHidden=1
 let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeMinimalUI=1
