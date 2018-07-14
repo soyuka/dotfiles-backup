@@ -1,4 +1,5 @@
-xterm*font:     *-fixed-*-*-*-20-*
+xterm*font:*-fixed-*-*-*-20-*
+
 ! xft screen configuration
 Xft.geometry: 80x30
 Xft.antialias: true
@@ -26,32 +27,25 @@ URxvt.cursorBlink: true
 
 ! mouse selection
 URxvt*charClass: 33:48,35:48,37:48,43:48,45-57:48,64:48,95:48,126:48
-! Base16 Tomorrow
-! Scheme: Chris Kempson (http://chriskempson.com)
+! Base16 Oceanic Next
+! Scheme: Dmitri Voronianski (http://pixelhunter.me)
 
-#define base00 #1d1f21
-#define base01 #282a2e
-#define base02 #373b41
-#define base03 #969896
-#define base04 #b4b7b4
-#define base05 #c5c8c6
-#define base06 #e0e0e0
-#define base07 #ffffff
-#define base08 #cc6666
-! orange
-#define base09 #de935f
-! yellow
-#define base0A #f0c674
-! green
-#define base0B #b5bd68
-! cyan
-#define base0C #8abeb7
-! blue
-#define base0D #81a2be
-! purple
-#define base0E #b294bb
-! brown
-#define base0F #a3685a
+#define base00 #1B2B34
+#define base01 #343D46
+#define base02 #4F5B66
+#define base03 #65737E
+#define base04 #A7ADBA
+#define base05 #C0C5CE
+#define base06 #CDD3DE
+#define base07 #D8DEE9
+#define base08 #EC5f67
+#define base09 #F99157
+#define base0A #FAC863
+#define base0B #99C794
+#define base0C #5FB3B3
+#define base0D #6699CC
+#define base0E #C594C5
+#define base0F #AB7967
 
 *black: base00
 *lightblack: base01

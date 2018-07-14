@@ -11,8 +11,10 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # global installed things
 export PATH=$PATH:~/.local/bin:~/.config/composer/vendor/bin
-# local
-export PATH=$PATH:node_modules/.bin:vendor/bin
+# npm local / with lerna
+export PATH=$PATH:node_modules/.bin:../../node_modules/.bin:../node_modules/.bin
+# composer
+export PATH=$PATH:vendor/bin
 
 bindkey -e #emacs key bindings
 

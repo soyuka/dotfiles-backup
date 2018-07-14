@@ -4,10 +4,16 @@ pavucontrol
 rofi
 scrot
 zathura
-termite
+alacritty
+# termite
 otf-font-awesome
-ttf-font-awesome
+# ttf-font-awesome
+# Ranger
 ranger
+w3m
+pygmentize
+atool
+mediainfo
 jq
 httpie
 htop
@@ -27,3 +33,4 @@ i3-gaps
 compton
 vlc
 notify-osd libnotify
+unzip zip unrar
