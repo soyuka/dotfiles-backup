@@ -258,6 +258,10 @@ let g:ale_linters = {
 
 let g:ale_lint_on_text_changed = 'never'
 
+" Remove highlight color from ale
+highlight clear ALEError
+highlight clear ALEWarning
+
 map <Leader>g :GitGutterToggle<CR>
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"

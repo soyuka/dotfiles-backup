@@ -1,4 +1,5 @@
-xterm*font:     *-fixed-*-*-*-20-*
+xterm*font:*-fixed-*-*-*-20-*
+
 ! xft screen configuration
 Xft.geometry: 80x30
 Xft.antialias: true
