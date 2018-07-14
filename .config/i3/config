@@ -36,8 +36,8 @@ floating_modifier $mod
 focus_follows_mouse yes
 
 # start a terminal
-bindsym $mod+Return exec termite -e ~/.config/i3/tmux.sh
-bindsym $mod+Shift+Return exec termite
+bindsym $mod+Return exec alacritty -e ~/.config/i3/tmux.sh
+bindsym $mod+Shift+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill

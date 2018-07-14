@@ -4,7 +4,8 @@ pavucontrol
 rofi
 scrot
 zathura
-termite
+alacritty
+# termite
 otf-font-awesome
 # ttf-font-awesome
 # Ranger
@@ -32,5 +33,4 @@ i3-gaps
 compton
 vlc
 notify-osd libnotify
-
 unzip zip unrar

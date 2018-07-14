@@ -13,6 +13,7 @@
 !.config/i3blocks
 !.config/ranger
 !.config/termite
+!.config/alacritty
 !.config/yabar
 !.config/zsh
 !.config/specific
