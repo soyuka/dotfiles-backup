@@ -2,12 +2,11 @@ set nocp
 filetype off
 call plug#begin()
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'chriskempson/base16-vim'
+Plug 'mhartington/oceanic-next'
 Plug 'scrooloose/nerdtree'
 Plug 'embear/vim-localvimrc'
 " Lightline FTW
 Plug 'itchyny/lightline.vim'
-Plug 'daviesjamie/vim-base16-lightline'
 " Plug 'maximbaz/lightline-ale'
 " buffer manager <3
 Plug 'fholgado/minibufexpl.vim'
@@ -77,14 +76,11 @@ if os == 'Darwin' || os == 'Mac'
 endif
 
 " Colors
-"
+
 " Disable Background Color Erase when within tmux - https://stackoverflow.com/q/6427650/102704
-" Keeping this here as a workaround on urxvt
-" let base16colorspace=256
-" set background=dark
-" if $TMUX != ""
-"   set t_ut=
-" endif
+if &term =~ '256color'
+    set t_ut=
+endif
 
 " set Vim-specific sequences for RGB colors
 " see https://github.com/vim/vim/issues/993#issuecomment-255651605
@@ -95,7 +91,10 @@ if has("termguicolors")
   set termguicolors
 endif
 
-colorscheme base16-oceanicnext
+" Enable bold/italic on the scheme
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
 
 syntax on
 
@@ -240,7 +239,7 @@ vmap gb :TCommentBlock<CR>
 
 let g:lock = "🔒""
 let g:lightline = {
-      \ 'colorscheme': 'base16',
+      \ 'colorscheme': 'oceanicnext',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]

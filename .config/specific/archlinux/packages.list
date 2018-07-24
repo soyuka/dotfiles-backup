@@ -8,6 +8,7 @@ alacritty
 # termite
 otf-font-awesome
 # ttf-font-awesome
+ttf-symbola ttf-emojione-color ttf-freefont
 # Ranger
 ranger
 w3m
