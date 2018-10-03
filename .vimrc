@@ -1,4 +1,3 @@
-set nocp
 filetype off
 call plug#begin()
 Plug 'christoomey/vim-tmux-navigator'
@@ -87,10 +86,14 @@ endif
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
+
 if has("termguicolors")
   set termguicolors
 endif
 
+" italic fix
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
 " Enable bold/italic on the scheme
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
@@ -125,6 +128,8 @@ set autoindent
 
 " Spaces are better than a tab character
 set expandtab
+" global tab config
+set ts=2 sw=2
 set smarttab
 set shiftround
 
@@ -276,3 +281,40 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 
 let g:localvimrc_ask=0
+let s:full_mode = 1
+
+function! FullMode()
+  let s:full_mode = 1
+  set showmode
+  set ruler
+  set laststatus=2
+  set showcmd
+  set number
+  let g:miniBufExplorerAutoStart = 1
+  call gitgutter#enable()
+endfunction
+
+function! CleanMode()
+  let s:full_mode = 0
+  set noshowmode
+  set noruler
+  set laststatus=0
+  set noshowcmd
+  set nonumber
+  let g:miniBufExplorerAutoStart = 0
+
+  " call MBEClose()
+  call gitgutter#disable()
+endfunction
+
+function! ToggleMode()
+  if s:full_mode  == 0
+    call FullMode()
+  else
+    call CleanMode()
+  endif
+endfunction
+
+nnoremap <F12> :call ToggleMode()<CR>
+
+" vim:ft=vim:tabstop=2:shiftwidth=2:softtabstop=2:smarttab:shiftround:expandtab
