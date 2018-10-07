@@ -1,4 +1,3 @@
-set nocp
 filetype off
 call plug#begin()
 Plug 'christoomey/vim-tmux-navigator'
@@ -87,10 +86,14 @@ endif
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
+
 if has("termguicolors")
   set termguicolors
 endif
 
+" italic fix
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
 " Enable bold/italic on the scheme
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
@@ -125,6 +128,8 @@ set autoindent
 
 " Spaces are better than a tab character
 set expandtab
+" global tab config
+set ts=2 sw=2
 set smarttab
 set shiftround
 
@@ -279,5 +284,10 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 let g:localvimrc_ask=0
 
 " Alias to save as sudo when you forget sudo
-" https://github.com/yoshuawuyts/dotfiles/blob/master/vim/vimrc#L304-L305
-cmap w!! %!sudo tee > /dev/null %
+" from masteringvim
+" also seen in https://github.com/yoshuawuyts/dotfiles/blob/master/vim/vimrc#L304-L305
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+source .vim/no_distraction_mode
+nnoremap <F12> :call ToggleNoDistractionMode()<CR>
+" vim:ft=vim:tabstop=2:shiftwidth=2:softtabstop=2:smarttab:shiftround:expandtab

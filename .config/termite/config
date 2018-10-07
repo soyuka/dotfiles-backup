@@ -1,6 +1,6 @@
 # vim: ft=dosini cms=#%s
 [options]
-font = Source Code Pro 10
+font = Source Code Pro 18
 
 scrollback_lines = 10000
 
