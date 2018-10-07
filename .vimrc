@@ -211,6 +211,7 @@ autocmd BufRead,BufNewFile *.json source ~/.vim/ftplugin/javascript.vim
 autocmd BufRead,BufNewFile *.ts set filetype=typescript
 autocmd BufRead,BufNewFile *.html source ~/.vim/ftplugin/html.vim
 autocmd BufRead,BufNewFile *.feature set ts=2 sw=2
+autocmd BufRead,BufNewFile *.rs set ts=2 sw=2
 
 " auto remove/hi trailing space
 autocmd BufWritePre * :%s/\s\+$//e
@@ -276,3 +277,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 
 let g:localvimrc_ask=0
+
+" Alias to save as sudo when you forget sudo
+" https://github.com/yoshuawuyts/dotfiles/blob/master/vim/vimrc#L304-L305
+cmap w!! %!sudo tee > /dev/null %
