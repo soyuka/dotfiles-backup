@@ -173,7 +173,7 @@ bindsym $mod+Shift+P exec ~/.config/i3/sp.sh play
 
 # Startup
 exec --no-startup-id compton -b
-exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Backgrounds/rocket-league.png
+exec --no-startup-id feh --bg-fill ~/Pictures/Backgrounds/rocket-league.png
 exec --no-startup-id tmux -u -2 start-server
 exec --no-startup-id ~/.config/i3/init.sh
 # exec --no-startup-id yabar

@@ -288,6 +288,6 @@ let g:localvimrc_ask=0
 " also seen in https://github.com/yoshuawuyts/dotfiles/blob/master/vim/vimrc#L304-L305
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
-source .vim/no_distraction_mode
+source ~/.vim/no_distraction_mode
 nnoremap <F12> :call ToggleNoDistractionMode()<CR>
 " vim:ft=vim:tabstop=2:shiftwidth=2:softtabstop=2:smarttab:shiftround:expandtab
