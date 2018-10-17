@@ -210,7 +210,7 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.scss set filetype=scss.css " ultisnips css for scss
 autocmd BufRead,BufNewFile *.css  source ~/.vim/ftplugin/css.vim
 autocmd BufRead,BufNewFile *.php  source ~/.vim/ftplugin/php.vim
-autocmd BufRead,BufNewFile *.yml  source ~/.vim/ftplugin/php.vim
+autocmd BufRead,BufNewFile *.yaml,*.yml  source ~/.vim/ftplugin/php.vim
 autocmd BufRead,BufNewFile *.js source ~/.vim/ftplugin/javascript.vim
 autocmd BufRead,BufNewFile *.json source ~/.vim/ftplugin/javascript.vim
 autocmd BufRead,BufNewFile *.ts set filetype=typescript
