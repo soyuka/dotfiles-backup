@@ -9,8 +9,8 @@ export NVM_LAZY_LOAD=true
 export ANDROID_HOME="${HOME}/Android/Sdk"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
-#                               composer global,              local,     node
-export PATH="$PATH:~/.config/composer/vendor/bin:vendor/bin:node_modules/.bin";
+# composer global, local, node
+export PATH="$PATH:$HOME/.config/composer/vendor/bin:vendor/bin:node_modules/.bin";
 
 bindkey -e #emacs key bindings
 source "$ZSH_CONFIG/aliases.zsh"
