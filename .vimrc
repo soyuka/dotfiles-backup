@@ -317,4 +317,12 @@ endfunction
 
 nnoremap <F12> :call ToggleMode()<CR>
 
+" cnoremap - tells Vim that the following mappings that is used when in command-line mode
+" w!! - the mapping (shortcut) itself.
+" execute '<command>' - executes a command between the quotes
+" silent! - run it silently
+" write !sudo tee % >/dev/null - the magic trick which would take another email to explain
+" <bar> edit! - this calls the edit command to reload the buffer and then avoid messages such as "the buffer has changed".
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
 " vim:ft=vim:tabstop=2:shiftwidth=2:softtabstop=2:smarttab:shiftround:expandtab
