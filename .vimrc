@@ -291,6 +291,7 @@ function! FullMode()
   set showcmd
   set number
   let g:miniBufExplorerAutoStart = 1
+  execute 'MBEOpen'
   call gitgutter#enable()
 endfunction
 
@@ -302,8 +303,7 @@ function! CleanMode()
   set noshowcmd
   set nonumber
   let g:miniBufExplorerAutoStart = 0
-
-  " call MBEClose()
+  execute 'MBEClose'
   call gitgutter#disable()
 endfunction
 
