@@ -4,13 +4,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 ZSH_CONFIG="${HOME}/.config/zsh"
 ANTIGEN_DIR="$ZSH_CONFIG/antigen"
-export NVM_DIR="${HOME}/.nvm"
-export NVM_LAZY_LOAD=true
-export ANDROID_HOME="${HOME}/Android/Sdk"
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-
-# composer global, local, node
-export PATH="$PATH:$HOME/.config/composer/vendor/bin:vendor/bin:node_modules/.bin";
 
 bindkey -e #emacs key bindings
 source "$ZSH_CONFIG/aliases.zsh"
@@ -33,4 +26,5 @@ zstyle :compinstall filename '/home/soyuka/.zshrc'
 plugins=(zsh-completions)
 autoload -U compinit
 compinit
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
