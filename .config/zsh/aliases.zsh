@@ -3,7 +3,7 @@ myip() {
 }
 
 calc() {
-  echo "$(($@))"
+  node
 }
 
 open() {
@@ -38,4 +38,3 @@ rmi() {
 rmd() {
   pandoc $1 | lynx -stdin
 }
-

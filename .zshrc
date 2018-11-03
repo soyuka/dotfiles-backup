@@ -9,15 +9,11 @@ export NVM_LAZY_LOAD=true
 export ANDROID_HOME="${HOME}/Android/Sdk"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
-# global installed things
-export PATH=$PATH:~/.local/bin:~/.config/composer/vendor/bin
-# npm local / with lerna
-export PATH=$PATH:node_modules/.bin:../../node_modules/.bin:../node_modules/.bin
-# composer
-export PATH=$PATH:vendor/bin
+# composer global, local, node
+export PATH="$PATH:$HOME/.config/composer/vendor/bin:vendor/bin:node_modules/.bin";
 
 bindkey -e #emacs key bindings
-
+source "$ZSH_CONFIG/aliases.zsh"
 source "$ZSH_CONFIG/antigen.zsh"
 
 antigen use oh-my-zsh
@@ -37,6 +33,4 @@ zstyle :compinstall filename '/home/soyuka/.zshrc'
 plugins=(zsh-completions)
 autoload -U compinit
 compinit
-
-source "$ZSH_CONFIG/aliases.zsh"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
