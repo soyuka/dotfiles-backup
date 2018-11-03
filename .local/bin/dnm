@@ -10,12 +10,16 @@ encrypt() {
     exit 1
   fi
 
-  recipient=$(gpg --list-keys --with-colons | cut -d : -f 10 | sort -u | awk -F "(<|>)" '{print $2}' | grep '@' | rofi -dmenu)
+  recipient=$(gpg --list-keys --with-colons | grep 'uid' | cut -d : -f 10 | sort -u | rofi -dmenu)
   echo $recipient
-  armor=$(gpg --recipient $recipient --armor --output - --encrypt $HOME/Documents/address.txt)
+  if [[ $recipient ]]; then
+    armor=$(gpg --recipient $recipient --armor --output - --encrypt $HOME/Documents/address.txt)
 
-  echo "$armor" | xclip -selection clipboard
-  echo "$armor"
+    echo "$armor" | xclip -selection clipboard
+    echo "$armor"
+  else
+    echo "No recipient."
+  fi
 }
 
 case "$1" in
