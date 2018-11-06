@@ -1,0 +1,40 @@
+#!/bin/bash
+
+import_public_key() {
+  xclip -o | gpg --import
+}
+
+encrypt() {
+  if [[ ! -f $HOME/Documents/address.txt ]]; then
+    echo "Missing $HOME/Documents/address.txt file"
+    exit 1
+  fi
+
+  recipient=$(gpg --list-keys --with-colons | grep 'uid' | cut -d : -f 10 | sort -u | rofi -dmenu)
+  echo $recipient
+  if [[ $recipient ]]; then
+    armor=$(gpg --recipient $recipient --armor --output - --encrypt $HOME/Documents/address.txt)
+
+    echo "$armor" | xclip -selection clipboard
+    echo "$armor"
+  else
+    echo "No recipient."
+  fi
+}
+
+case "$1" in
+'import')
+    import_public_key
+    ;;
+'encrypt')
+    encrypt
+    ;;
+*)
+cat <<EOF
+dnm
+
+import - imports clipboard public key
+encrypt - encrypt the ~/Documents/address.txt file for a given recipient
+EOF
+    ;;
+esac

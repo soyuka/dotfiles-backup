@@ -210,12 +210,13 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.scss set filetype=scss.css " ultisnips css for scss
 autocmd BufRead,BufNewFile *.css  source ~/.vim/ftplugin/css.vim
 autocmd BufRead,BufNewFile *.php  source ~/.vim/ftplugin/php.vim
-autocmd BufRead,BufNewFile *.yml  source ~/.vim/ftplugin/php.vim
+autocmd BufRead,BufNewFile *.yaml,*.yml  source ~/.vim/ftplugin/php.vim
 autocmd BufRead,BufNewFile *.js source ~/.vim/ftplugin/javascript.vim
 autocmd BufRead,BufNewFile *.json source ~/.vim/ftplugin/javascript.vim
 autocmd BufRead,BufNewFile *.ts set filetype=typescript
 autocmd BufRead,BufNewFile *.html source ~/.vim/ftplugin/html.vim
 autocmd BufRead,BufNewFile *.feature set ts=2 sw=2
+autocmd BufRead,BufNewFile *.rs set ts=2 sw=2
 
 " auto remove/hi trailing space
 autocmd BufWritePre * :%s/\s\+$//e
@@ -281,41 +282,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 
 let g:localvimrc_ask=0
-let s:full_mode = 1
-
-function! FullMode()
-  let s:full_mode = 1
-  set showmode
-  set ruler
-  set laststatus=2
-  set showcmd
-  set number
-  let g:miniBufExplorerAutoStart = 1
-  execute 'MBEOpen'
-  call gitgutter#enable()
-endfunction
-
-function! CleanMode()
-  let s:full_mode = 0
-  set noshowmode
-  set noruler
-  set laststatus=0
-  set noshowcmd
-  set nonumber
-  let g:miniBufExplorerAutoStart = 0
-  execute 'MBEClose'
-  call gitgutter#disable()
-endfunction
-
-function! ToggleMode()
-  if s:full_mode  == 0
-    call FullMode()
-  else
-    call CleanMode()
-  endif
-endfunction
-
-nnoremap <F12> :call ToggleMode()<CR>
+source ~/.vim/no_distraction_mode
+nnoremap <F12> :call ToggleNoDistractionMode()<CR>
 
 " cnoremap - tells Vim that the following mappings that is used when in command-line mode
 " w!! - the mapping (shortcut) itself.
