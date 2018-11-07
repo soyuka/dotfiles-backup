@@ -282,7 +282,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 
 let g:localvimrc_ask=0
-
 source ~/.vim/no_distraction_mode
 nnoremap <F12> :call ToggleNoDistractionMode()<CR>
 
