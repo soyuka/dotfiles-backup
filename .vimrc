@@ -56,11 +56,14 @@ Plug 'maralla/completor.vim'
 " Plug 'tobyS/pdv'
 " Plug 'arnaud-lb/vim-php-namespace'
 " javascript
-" Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 " Ts
 Plug 'Quramy/tsuquyomi'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'heavenshell/vim-jsdoc'
+" Rust
+Plug 'rust-lang/rust.vim'
 call plug#end()
 " My config
 
@@ -216,7 +219,7 @@ autocmd BufRead,BufNewFile *.json source ~/.vim/ftplugin/javascript.vim
 autocmd BufRead,BufNewFile *.ts set filetype=typescript
 autocmd BufRead,BufNewFile *.html source ~/.vim/ftplugin/html.vim
 autocmd BufRead,BufNewFile *.feature set ts=2 sw=2
-autocmd BufRead,BufNewFile *.rs set ts=2 sw=2
+autocmd BufRead,BufNewFile *.rs set ts=4 sw=4
 
 " auto remove/hi trailing space
 autocmd BufWritePre * :%s/\s\+$//e
