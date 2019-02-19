@@ -1,3 +1,5 @@
 [user]
-	email = soyuka@gmail.com
+	email = soyuka@users.noreply.github.com
 	name = soyuka
+[core]
+	excludesfile = /home/soyuka/.gitignore-global
