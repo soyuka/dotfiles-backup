@@ -100,7 +100,8 @@ let &t_ZR="\e[23m"
 " Enable bold/italic on the scheme
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+" colorscheme OceanicNext
+colorscheme base16-google-light
 
 syntax on
 
