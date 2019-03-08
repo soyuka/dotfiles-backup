@@ -94,6 +94,12 @@ font:
     x: 0
     y: 0
 
+  # Scale the font size based on the monitor's DPI. This will lead to bigger text on HiDPI
+  # screens and make reading text a little easier.
+  # On X11 it is possible to change the DPI for each instance of alacritty by using
+  # `WINIT_HIDPI_FACTOR=1.0 alacritty` to scale the font.
+  scale_with_dpi: true
+
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
   # false.
@@ -103,49 +109,48 @@ font:
 render_timer: false
 
 # Colors (Tomorrow Night Bright)
+# Base16 Google Light 256 - alacritty color config
+# Seth Wright (http://sethawright.com)
 colors:
   # Default colors
   primary:
-    background: '0x1b2b34'
-    foreground: '0xc0c5ce'
+    background: '0xffffff'
+    foreground: '0x373b41'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x1b2b34'
-    cursor: '0xc0c5ce'
+    text: '0xffffff'
+    cursor: '0x373b41'
 
   # Normal colors
   normal:
-    black:   '0x1b2b34'
-    red:     '0xec5f67'
-    green:   '0x99c794'
-    yellow:  '0xfac863'
-    blue:    '0x6699cc'
-    magenta: '0xc594c5'
-    cyan:    '0x5fb3b3'
-    white: '0xc0c5ce'
+    black:   '0xffffff'
+    red:     '0xcc342b'
+    green:   '0x198844'
+    yellow:  '0xfba922'
+    blue:    '0x3971ed'
+    magenta: '0xa36ac7'
+    cyan:    '0x3971ed'
+    white:   '0x373b41'
 
   # Bright colors
   bright:
-    black:   '0x65737e'
-    red:     '0xec5f67'
-    green:   '0x99c794'
-    yellow:  '0xfac863'
-    blue:    '0x6699cc'
-    magenta: '0xc594c5'
-    cyan:    '0x5fb3b3'
-    white: '0xc0c5ce'
+    black:   '0xb4b7b4'
+    red:     '0xcc342b'
+    green:   '0x198844'
+    yellow:  '0xfba922'
+    blue:    '0x3971ed'
+    magenta: '0xa36ac7'
+    cyan:    '0x3971ed'
+    white:   '0x1d1f21'
 
-  # Dim colors (Optional)
-  dim:
-    black:   '0x65737e'
-    red:     '0xec5f67'
-    green:   '0x99c794'
-    yellow:  '0xfac863'
-    blue:    '0x6699cc'
-    magenta: '0xc594c5'
-    cyan:    '0x5fb3b3'
-    white: '0xc0c5ce'
+  indexed_colors:
+    - { index: 16, color: '0xf96a38' }
+    - { index: 17, color: '0x3971ed' }
+    - { index: 18, color: '0xe0e0e0' }
+    - { index: 19, color: '0xc5c8c6' }
+    - { index: 20, color: '0x969896' }
+    - { index: 21, color: '0x282a2e' }
 
 # Visual Bell
 #

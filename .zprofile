@@ -10,3 +10,4 @@ export NVM_LAZY_LOAD=true
 if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
   exec startx
 fi
+WINIT_HIDPI_FACTOR="1.0"

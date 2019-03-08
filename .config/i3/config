@@ -37,7 +37,7 @@ focus_follows_mouse yes
 
 # start a terminal
 bindsym $mod+Return exec alacritty -e ~/.config/i3/tmux.sh
-bindsym $mod+Shift+Return exec alacritty
+bindsym $mod+Shift+Return exec alacritty --config-file ~/.config/alacritty/alacritty.light.yml
 
 # kill focused window
 bindsym $mod+Shift+q kill
