@@ -1,6 +1,7 @@
 filetype off
 call plug#begin()
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'ap/vim-css-color'
 Plug 'mhartington/oceanic-next'
 Plug 'scrooloose/nerdtree'
 Plug 'embear/vim-localvimrc'
@@ -57,7 +58,8 @@ Plug 'maralla/completor.vim'
 " Plug 'arnaud-lb/vim-php-namespace'
 " javascript
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+" Plug 'evanleck/vim-svelte'
+" Plug 'mxw/vim-jsx'
 " Ts
 Plug 'Quramy/tsuquyomi'
 Plug 'Quramy/vim-js-pretty-template'
@@ -100,8 +102,8 @@ let &t_ZR="\e[23m"
 " Enable bold/italic on the scheme
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-" colorscheme OceanicNext
-colorscheme base16-google-light
+colorscheme OceanicNext
+" colorscheme base16-google-light
 
 syntax on
 
@@ -110,7 +112,7 @@ set nocompatible
 set number " enable line numbers
 set showcmd
 set scrolloff=5               " keep at least 5 lines above/below
-set sidescrolloff=5           " keep at least 5 lines left/right
+set sidescrolloff=5          " keep at least 5 lines left/right
 set showmatch
 " set colorcolumn=81
 
