@@ -9,14 +9,15 @@
 !.config
 !.gitconfig
 .config/*
+!.config/alacritty
 !.config/i3
 !.config/i3blocks
+!.config/nvim
 !.config/ranger/rc.conf
+!.config/specific
 !.config/termite
-!.config/alacritty
 !.config/yabar
 !.config/zsh
-!.config/specific
 .vim/*
 !.vim/ftplugin
 !.vim/autoload

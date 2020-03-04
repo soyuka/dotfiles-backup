@@ -2,9 +2,8 @@ filetype off
 call plug#begin()
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ap/vim-css-color'
-Plug 'mhartington/oceanic-next'
+Plug 'sainnhe/edge'
 Plug 'scrooloose/nerdtree'
-Plug 'embear/vim-localvimrc'
 " Lightline FTW
 Plug 'itchyny/lightline.vim'
 " Plug 'maximbaz/lightline-ale'
@@ -27,18 +26,19 @@ Plug 'jiangmiao/auto-pairs'
 " gcc comment
 Plug 'tomtom/tcomment_vim'
 
-" multiple cursor editing
-Plug 'terryma/vim-multiple-cursors'
-
 " Auto update ctags
 Plug 'craigemery/vim-autotag'
 
-" "PHP Plugs
-Plug 'phpactor/phpactor', {'for': 'php'}
-" " phpfolding
+"PHP Plugs
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+" phpfolding
 Plug 'rayburgemeestre/phpfolding.vim', {'for': 'php'}
-" " Command to add getter/setter BUGGED
-" Plug 'docteurklein/php-getter-setter.vim', {'for': 'php'}
+" Command to add getter/setter BUGGED php 7
+Plug 'docteurklein/php-getter-setter.vim', {'for': 'php'}
+" auto doc php
+" Plug 'tobyS/vmustache'
+" Plug 'tobyS/pdv'
+" Plug 'arnaud-lb/vim-php-namespace'
 
 " SQL plug
 Plug 'shmup/vim-sql-syntax', {'for': 'sql'}
@@ -50,12 +50,6 @@ Plug 'junegunn/fzf.vim'
 " git gutter
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-" Completion
-Plug 'maralla/completor.vim'
-" auto doc php
-" Plug 'tobyS/vmustache'
-" Plug 'tobyS/pdv'
-" Plug 'arnaud-lb/vim-php-namespace'
 " javascript
 Plug 'pangloss/vim-javascript'
 " Plug 'evanleck/vim-svelte'
@@ -66,7 +60,19 @@ Plug 'Quramy/vim-js-pretty-template'
 Plug 'heavenshell/vim-jsdoc'
 " Rust
 Plug 'rust-lang/rust.vim'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
+" nvim
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'kristijanhusak/deoplete-phpactor'
+  Plug 'Shougo/echodoc.vim'
+else
+  " Completion
+  Plug 'maralla/completor.vim'
+endif
 call plug#end()
+
 " My config
 
 set tags+=tags,tags.vendor
@@ -90,20 +96,19 @@ endif
 " see https://github.com/vim/vim/issues/993#issuecomment-255651605
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
+" italic fix
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
 
 if has("termguicolors")
   set termguicolors
 endif
 
-" italic fix
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
-" Enable bold/italic on the scheme
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
-"colorscheme base16-google-light
+set background=dark
+" set background=light
+" let g:edge_style = 'neon'
+
+colorscheme edge
 
 syntax on
 
@@ -211,7 +216,7 @@ nnoremap <C-o> za
 nnoremap <C-S-O> zR
 nnoremap <C-c> zM
 
-autocmd filetype crontab setlocal nobackup nowritebackup
+autocmd FileType crontab setlocal nobackup nowritebackup
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.scss set filetype=scss.css " ultisnips css for scss
 autocmd BufRead,BufNewFile *.css  source ~/.vim/ftplugin/css.vim
@@ -226,6 +231,13 @@ autocmd BufRead,BufNewFile *.rs set ts=4 sw=4
 
 " auto remove/hi trailing space
 autocmd BufWritePre * :%s/\s\+$//e
+
+if has('nvim')
+  " Start deoplete
+  let g:deoplete#enable_at_startup = 1
+  let g:echodoc#enable_at_startup = 1
+  let g:echodoc#type = 'virtual'
+endif
 
 " NERDTree options
 " Chdir to current file
@@ -251,7 +263,7 @@ vmap gb :TCommentBlock<CR>
 
 let g:lock = "🔒""
 let g:lightline = {
-      \ 'colorscheme': 'oceanicnext',
+      \ 'colorscheme': 'edge',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
@@ -287,7 +299,6 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 
-let g:localvimrc_ask=0
 source ~/.vim/no_distraction_mode
 nnoremap <F12> :call ToggleNoDistractionMode()<CR>
 
@@ -299,4 +310,6 @@ nnoremap <F12> :call ToggleNoDistractionMode()<CR>
 " <bar> edit! - this calls the edit command to reload the buffer and then avoid messages such as "the buffer has changed".
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
+" Command that searches the word under the cursor
+" vnoremap <C-n>  y:%s/<C-R>=escape(@",'/\')<CR>/
 " vim:ft=vim:tabstop=2:shiftwidth=2:softtabstop=2:smarttab:shiftround:expandtab
