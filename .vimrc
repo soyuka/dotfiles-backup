@@ -2,6 +2,7 @@ filetype off
 call plug#begin()
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ap/vim-css-color'
+" Colorscheme
 Plug 'sainnhe/edge'
 Plug 'scrooloose/nerdtree'
 " Lightline FTW
@@ -15,6 +16,9 @@ Plug 'qpkorr/vim-bufkill'
 " Asynchronous Lint Engine
 Plug 'w0rp/ale'
 
+" Signature when <C-Y>
+Plug 'Shougo/echodoc.vim'
+
 " Syntax
 Plug 'sheerun/vim-polyglot'
 
@@ -26,19 +30,18 @@ Plug 'jiangmiao/auto-pairs'
 " gcc comment
 Plug 'tomtom/tcomment_vim'
 
-" Auto update ctags
-Plug 'craigemery/vim-autotag'
+" Language server support
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
-"PHP Plugs
+" Typescript plugin for auto imports
+Plug 'Quramy/tsuquyomi'
+Plug 'Quramy/vim-js-pretty-template'
+" Phpactor for namespace import
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
-" phpfolding
-Plug 'rayburgemeestre/phpfolding.vim', {'for': 'php'}
-" Command to add getter/setter BUGGED php 7
-Plug 'docteurklein/php-getter-setter.vim', {'for': 'php'}
-" auto doc php
-" Plug 'tobyS/vmustache'
-" Plug 'tobyS/pdv'
-" Plug 'arnaud-lb/vim-php-namespace'
 
 " SQL plug
 Plug 'shmup/vim-sql-syntax', {'for': 'sql'}
@@ -50,27 +53,8 @@ Plug 'junegunn/fzf.vim'
 " git gutter
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-" javascript
-Plug 'pangloss/vim-javascript'
-" Plug 'evanleck/vim-svelte'
-" Plug 'mxw/vim-jsx'
-" Ts
-Plug 'Quramy/tsuquyomi'
-Plug 'Quramy/vim-js-pretty-template'
-Plug 'heavenshell/vim-jsdoc'
-" Rust
-Plug 'rust-lang/rust.vim'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-" nvim
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'kristijanhusak/deoplete-phpactor'
-  Plug 'Shougo/echodoc.vim'
-else
-  " Completion
-  Plug 'maralla/completor.vim'
-endif
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 call plug#end()
 
 " My config
@@ -232,12 +216,9 @@ autocmd BufRead,BufNewFile *.rs set ts=4 sw=4
 " auto remove/hi trailing space
 autocmd BufWritePre * :%s/\s\+$//e
 
-if has('nvim')
-  " Start deoplete
-  let g:deoplete#enable_at_startup = 1
-  let g:echodoc#enable_at_startup = 1
-  let g:echodoc#type = 'virtual'
-endif
+" Echo doc
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#type = "popup"
 
 " NERDTree options
 " Chdir to current file
@@ -281,6 +262,13 @@ let g:lightline = {
 \ }
 
 nnoremap <C-p> :FZF<CR>
+
+" LSP (language server) Plugin
+let g:lsp_diagnostics_enabled = 0
+setlocal omnifunc=lsp#complete
+nmap <Leader>o <plug>(lsp-definition)
+nmap <Leader>K <plug>(lsp-hover)
+"nmap <f2> <plug>(lsp-rename)
 
 let g:ale_linters = {
 \   'typescript': ['tslint', 'tsserver', 'typecheck'],
