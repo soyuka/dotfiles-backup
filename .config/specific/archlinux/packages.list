@@ -1,3 +1,6 @@
+sudo git
+zsh
+man
 tmux
 arandr
 pavucontrol
@@ -8,30 +11,38 @@ alacritty
 # termite
 otf-font-awesome
 # ttf-font-awesome
-ttf-symbola ttf-emojione-color ttf-freefont
+# ttf-symbola ttf-emojione-color ttf-freefont
 # Ranger
-ranger
-w3m
-pygmentize
-atool
-mediainfo
+# ranger
+# w3m
+# pygmentize
+# atool
+# mediainfo
 jq
 httpie
 htop
 feh
 xorg
 xorg-xinit
+xf86-video-intel
 adobe-source-code-pro-fonts
 fzf
 firefox-developer-edition
 pulseaudio
-pulseaudio-alsa bc playerctl alsa-utils sysstat
-aurman
-# Battery monitor: acpi
+pulseaudio-alsa
+# playerctl
+alsa-utils
+# bc
+# sysstat
+# Battery monitor:
+# acpi
 # AUR
-i3blocks-gaps-git
+# i3blocks
+# todo: i3-blocks-contrib
 i3-gaps
 compton
 vlc
 notify-osd libnotify
 unzip zip unrar
+base-devel
+bluez bluez-utils blueman
