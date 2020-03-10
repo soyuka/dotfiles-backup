@@ -1,111 +1,36 @@
-xterm*font:*-fixed-*-*-*-20-*
+! special
+*.foreground:   #ABB2BF
+*.background:   #282C34
+*.cursorColor:  #ABB2BF
 
-! xft screen configuration
-Xft.geometry: 80x30
-Xft.antialias: true
-Xft.hinting: true
-Xft.autohint: true
-Xft.hintstyle: hintfull
-Xft.dpi: 130
-XCursor.size: 24
+! black
+*.color0:       #5C6370
+*.color8:       #4B5263
 
-URxvt*saveLines: 4096
-URxvt.scrollBar: false
+! red
+*.color1:       #E06C75
+*.color9:       #BE5046
 
-URxvt*xselectToClipboard: true
-URxvt*trimSelection: true
-! Remove iso14755
-URxvt.iso14755: False
+! green
+*.color2:       #98C379
+*.color10:      #98C379
 
-! Locale
-! URxvt.font:9x15bold, xft:SourceCodePro:size=14:antialias=true:autohint=true
-URxvt.font:xft:SourceCodePro:size=14:antialias=true:autohint=true,xft:Font Awesome 5 Free,xft:Symbola,xft:DejaVuSans
-! URxvt.font: xft:SourceCodePro:size=18:antialias=true:autohint=true
-! URxvt.boldFont: xft:SourceCodeProBold:size=10
-! URxvt.letterSpace: 0
-URxvt.cursorBlink: true
+! yellow
+*.color3:       #E5C07B
+*.color11:      #D19A66
 
-! mouse selection
-URxvt*charClass: 33:48,35:48,37:48,43:48,45-57:48,64:48,95:48,126:48
-! Base16 Oceanic Next
-! Scheme: Dmitri Voronianski (http://pixelhunter.me)
+! blue
+*.color4:       #61AFEF
+*.color12:      #61AFEF
 
-#define base00 #1B2B34
-#define base01 #343D46
-#define base02 #4F5B66
-#define base03 #65737E
-#define base04 #A7ADBA
-#define base05 #C0C5CE
-#define base06 #CDD3DE
-#define base07 #D8DEE9
-#define base08 #EC5f67
-#define base09 #F99157
-#define base0A #FAC863
-#define base0B #99C794
-#define base0C #5FB3B3
-#define base0D #6699CC
-#define base0E #C594C5
-#define base0F #AB7967
+! magenta
+*.color5:       #C678DD
+*.color13:      #C678DD
 
-*black: base00
-*lightblack: base01
-*grey: base02
-*lightgrey: base03
-*darkwhite: base04
-*white: base05
-*foreground: base06
-*red: base08
-*orange: base09
-*yellow: base0A
-*green: base0B
-*cyan: base0C
-*blue: base0D
-*magenta: base0E
-*brown: base0F
+! cyan
+*.color6:       #56B6C2
+*.color14:      #56B6C2
 
-URxvt*foreground:   base05
-URxvt*background:   base00
-URxvt*cursorColor:  base05
-
-URxvt*color0:       base00
-URxvt*color1:       base08
-URxvt*color2:       base0B
-URxvt*color3:       base0A
-URxvt*color4:       base0D
-URxvt*color5:       base0E
-URxvt*color6:       base0C
-URxvt*color7:       base05
-
-URxvt*color8:       base03
-URxvt*color9:       base08
-URxvt*color10:      base0B
-URxvt*color11:      base0A
-URxvt*color12:      base0D
-URxvt*color13:      base0E
-URxvt*color14:      base0C
-URxvt*color15:      base07
-
-! Note: colors beyond 15 might not be loaded (e.g., URxvt, urxvt),
-! use 'shell' template to set these if necessary
-URxvt*color16:      base09
-URxvt*color17:      base0F
-URxvt*color18:      base01
-URxvt*color19:      base02
-URxvt*color20:      base04
-URxvt*color21:      base06
-
-! Rofi settings
-rofi.color-enabled: true
-!                  background border separator
-rofi.color-window: base01, base02, base02
-!                  background foreground alt highlight background foreground
-rofi.color-normal: base01, base06, base01, base02, base07
-rofi.color-active: base01, base0D, base01, #5e6b8d, base07
-rofi.color-urgent: base09, base07, base09, #bf674a, base07
-rofi.eh: 1
-rofi.line-margin: 6
-rofi.bw: 5
-rofi.dpi: 130
-rofi.separator-style: solid
-rofi.hide-scrollbar: true
-rofi.font: SourceCodePro 14
+! white
+*.color7:       #ABB2BF
+*.color15:      #3E4452

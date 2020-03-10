@@ -1,18 +1,16 @@
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
 ZSH_CONFIG="${HOME}/.config/zsh"
 ANTIGEN_DIR="$ZSH_CONFIG/antigen"
 
-bindkey -e #emacs key bindings
+bindkey -e # emacs key bindings
 source "$ZSH_CONFIG/aliases.zsh"
 source "$ZSH_CONFIG/antigen.zsh"
 
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle git-extras
-# antigen bundle gitfast
 antigen bundle npm
 
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -26,9 +24,5 @@ zstyle :compinstall filename '/home/soyuka/.zshrc'
 plugins=(zsh-completions)
 autoload -U compinit
 compinit
-
-# Init cpanm
-# cpanm --local-lib=~/perl5 local::lib
-# && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

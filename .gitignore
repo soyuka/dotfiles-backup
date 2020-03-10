@@ -12,19 +12,12 @@
 !.config/alacritty
 !.config/i3
 !.config/i3blocks
-!.config/nvim
-!.config/ranger/rc.conf
-!.config/specific
-!.config/termite
-!.config/yabar
+!.config/notes
 !.config/zsh
 .vim/*
 !.vim/ftplugin
 !.vim/autoload
 !.vim/colors
 !.local/bin/dnm
-.config/zsh/soyuka.zsh-theme.antigen-compat
-
-/target
-**/*.rs.bk
-Cargo.lock
+!.screenlayout
+# todo .config/zsh/soyuka.zsh-theme.antigen-compat

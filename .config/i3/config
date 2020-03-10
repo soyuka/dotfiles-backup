@@ -83,7 +83,7 @@ bindsym $mod+space exec rofi -show run
 bindsym $mod+Tab exec rofi -show window
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -167,21 +167,23 @@ bindsym XF86Display exec ~/.config/i3/kbdbacklight.sh
 bindsym XF86AudioPlay exec ~/.config/i3/sp.sh play
 bindsym XF86AudioNext exec ~/.config/i3/sp.sh next
 bindsym XF86AudioPrev exec ~/.config/i3/sp.sh prev
-bindsym $mod+Shift+Right exec ~/.config/i3/sp.sh next
-bindsym $mod+Shift+Left exec ~/.config/i3/sp.sh prev
-bindsym $mod+Shift+P exec ~/.config/i3/sp.sh play
+# bindsym $mod+Shift+Right exec ~/.config/i3/sp.sh next
+# bindsym $mod+Shift+Left exec ~/.config/i3/sp.sh prev
+# bindsym $mod+Shift+P exec ~/.config/i3/sp.sh play
+
+bindsym $mod+Shift+x exec ~/.config/i3/lockandsuspend.sh
+# bindsym XF86LaunchA exec scrot -s -e 'mv $f ~/Pictures/Screenshots'
+bindsym Print exec scrot -e 'mv $f ~/Pictures/Screenshots'
 
 # Startup
 exec --no-startup-id compton -b
-exec --no-startup-id feh --bg-fill ~/Pictures/Backgrounds/rocket-league.png
+exec --no-startup-id feh --bg-fill ~/Pictures/background.png
 exec --no-startup-id tmux -u -2 start-server
-exec --no-startup-id ~/.config/i3/init.sh
+exec --no-startup-id blueman-applet
+exec --no-startup-id wpa-cute -t
+# exec --no-startup-id ~/.config/i3/init.sh
 # exec --no-startup-id yabar
 # exec --no-startup-id xautolock -locker "i3lock -i ~/Pictures/Backgrounds/wallhaven-489193.png" -detectsleep
-
-bindsym $mod+Shift+x exec ~/.config/i3/lockandsuspend.sh
-bindsym XF86LaunchA exec scrot -s -e 'mv $f ~/Pictures/Screenshots'
-bindsym XF86Explorer exec scrot -e 'mv $f ~/Pictures/Screenshots'
 
 hide_edge_borders both
 new_window pixel 0

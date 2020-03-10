@@ -3,7 +3,7 @@ call plug#begin()
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ap/vim-css-color'
 " Colorscheme
-Plug 'sainnhe/edge'
+Plug 'joshdick/onedark.vim'
 Plug 'scrooloose/nerdtree'
 " Lightline FTW
 Plug 'itchyny/lightline.vim'
@@ -90,10 +90,9 @@ endif
 
 set background=dark
 " set background=light
-" let g:edge_style = 'neon'
 
-colorscheme edge
-
+let g:onedark_terminal_italics = 1
+colorscheme onedark
 syntax on
 
 " Settings
@@ -244,7 +243,7 @@ vmap gb :TCommentBlock<CR>
 
 let g:lock = "🔒""
 let g:lightline = {
-      \ 'colorscheme': 'edge',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
