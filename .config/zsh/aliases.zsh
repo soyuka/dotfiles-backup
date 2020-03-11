@@ -20,7 +20,11 @@ a() {
 }
 
 copy() {
-  xclip -selection clipboard
+  if hash wl-copy 2>/dev/null; then
+    wl-copy
+  else
+    xclip -selection clipboard
+  fi
 }
 
 v() {

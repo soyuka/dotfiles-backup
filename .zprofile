@@ -6,8 +6,10 @@ export PATH="$PATH:$HOME/.cargo/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-t
 export NVM_DIR="${HOME}/.nvm"
 export NVM_LAZY_LOAD=true
 export PATH="$HOME/.symfony/bin:$PATH"
+export GRIM_DEFAULT_DIR=~/Pictures/Screenshots
 
 # startx on the 1st vt
 if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec startx
+  # exec startx
+  exec sway
 fi

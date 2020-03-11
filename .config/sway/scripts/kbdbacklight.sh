@@ -1,5 +1,5 @@
 #!/bin/sh
- 
+
 backlight_get()
 {
     dbus-send --type=method_call --print-reply=literal --system         \
@@ -8,7 +8,7 @@ backlight_get()
         'org.freedesktop.UPower.KbdBacklight.GetBrightness'             \
         | awk '{print $2}'
 }
- 
+
 backlight_max()
 {
     dbus-send --type=method_call --print-reply=literal --system       \
@@ -17,7 +17,7 @@ backlight_max()
         'org.freedesktop.UPower.KbdBacklight.GetMaxBrightness'        \
         | awk '{print $2}'
 }
- 
+
 backlight_set()
 {
     dbus-send --type=method_call --print-reply=literal --system       \
@@ -30,4 +30,3 @@ backlight_set()
 next=$(($(backlight_get) + 1))
 
 [ $next -gt $(backlight_max) ] && backlight_set 0 || backlight_set $next
-
